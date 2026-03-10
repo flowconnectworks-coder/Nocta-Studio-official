@@ -57,7 +57,6 @@
             color: #f8f9fa;
             background-color: #080808;
             overflow-x: hidden;
-            word-break: break-word;
         }
 
         ::-webkit-scrollbar { width: 5px; }
@@ -92,11 +91,6 @@
         .border-gradient {
             border: 1px solid;
             border-image: linear-gradient(135deg, rgba(20,184,166,0.2), rgba(217,70,239,0.2)) 1;
-        }
-        
-        /* スマホ向けテキスト調整 */
-        @media (max-width: 768px) {
-            .br-mobile { display: block; }
         }
     </style>
 </head>
@@ -167,27 +161,27 @@
 
     <section id="about" class="py-16 md:py-24 relative">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-6xl mx-auto items-stretch">
-                <div data-aos="fade-up" class="glass-panel p-10 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-koyoi-emerald/30 transition-all text-center flex flex-col h-full">
-                    <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-koyoi-emerald mb-6 md:mb-8 italic uppercase">01 / STRATEGY</div>
-                    <h3 class="text-lg md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight">市場分析とブランディング戦略</h3>
-                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto items-stretch">
+                <div data-aos="fade-up" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-koyoi-emerald/30 transition-all text-center flex flex-col h-full">
+                    <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-koyoi-emerald mb-6 md:mb-8 italic uppercase text-center w-full">01 / STRATEGY</div>
+                    <h3 class="text-base md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight whitespace-nowrap text-center w-full">市場分析とブランディング戦略</h3>
+                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">
                         最新のSNSアルゴリズム解析と独自の市場調査に基づき、タレント一人ひとりに最適なブランディングを展開。独自の立ち位置を確立し、最短距離での成長を支援します。
                     </p>
                 </div>
 
-                <div data-aos="fade-up" data-aos-delay="100" class="glass-panel p-10 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-koyoi-magenta/30 transition-all text-center flex flex-col h-full">
-                    <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-koyoi-magenta mb-6 md:mb-8 italic uppercase">02 / BACKUP</div>
-                    <h3 class="text-lg md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight">専門スタッフによる制作支援</h3>
-                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider">
+                <div data-aos="fade-up" data-aos-delay="100" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-koyoi-magenta/30 transition-all text-center flex flex-col h-full">
+                    <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-koyoi-magenta mb-6 md:mb-8 italic uppercase text-center w-full">02 / BACKUP</div>
+                    <h3 class="text-base md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight whitespace-nowrap text-center w-full">専門スタッフによる制作支援</h3>
+                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">
                         動画編集、デザイン、配信環境の構築など、各分野の専門スタッフがあなたの表現をバックアップ。クリエイティブの質を最高水準まで引き上げ、活動に専念できる環境を提供します。
                     </p>
                 </div>
 
-                <div data-aos="fade-up" data-aos-delay="200" class="glass-panel p-10 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-koyoi-cyan/30 transition-all text-center flex flex-col h-full">
-                    <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-koyoi-cyan mb-6 md:mb-8 italic uppercase">03 / REVENUE</div>
-                    <h3 class="text-lg md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight">最高峰の収益化支援</h3>
-                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider">
+                <div data-aos="fade-up" data-aos-delay="200" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-koyoi-cyan/30 transition-all text-center flex flex-col h-full">
+                    <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-koyoi-cyan mb-6 md:mb-8 italic uppercase text-center w-full">03 / REVENUE</div>
+                    <h3 class="text-base md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight whitespace-nowrap text-center w-full">最高峰の収益化支援</h3>
+                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">
                         企業タイアップの獲得からオリジナルグッズ展開、コンテンツ販売まで多角的にサポート。ファンの熱狂を確かな価値へと変え、持続可能な活動基盤を構築します。
                     </p>
                 </div>
@@ -258,8 +252,8 @@
                     </p>
                 </div>
                 <div>
-                    <p class="font-black text-[9px] md:text-[10px] tracking-[0.4em] md:tracking-[0.5em] text-koyoi-emerald mb-6 md:mb-10 uppercase">Navigation</p>
-                    <ul class="space-y-4 md:space-y-5 font-black text-[9px] md:text-[10px] text-gray-500 tracking-[0.3em] uppercase">
+                    <p class="font-black text-[9px] md:text-[10px] tracking-[0.4em] md:tracking-[0.5em] text-koyoi-emerald mb-6 md:mb-10 uppercase text-center md:text-left">Navigation</p>
+                    <ul class="space-y-4 md:space-y-5 font-black text-[9px] md:text-[10px] text-gray-500 tracking-[0.3em] uppercase text-center md:text-left">
                         <li><a href="#about" class="hover:text-white transition-colors">Business</a></li>
                         <li><a href="#talents" class="hover:text-white transition-colors">Talents</a></li>
                         <li><a href="#audition" class="hover:text-white transition-colors">Audition</a></li>
@@ -268,11 +262,7 @@
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center pt-10 md:pt-12 border-t border-white/5 gap-6 md:gap-8 text-center md:text-left">
                 <p class="text-[8px] md:text-[9px] font-black text-gray-700 tracking-[0.4em] md:tracking-[0.6em] uppercase">&copy; 2026 GLOWENGINE LLC. ALL RIGHTS RESERVED.</p>
-                <div class="flex gap-6 md:gap-10 text-[8px] md:text-[9px] font-black text-gray-500 tracking-[0.3em] md:tracking-[0.4em] uppercase">
-                    <a href="#" class="hover:text-koyoi-cyan transition-colors text-white font-black">X / Twitter</a>
-                    <a href="#" class="hover:text-koyoi-cyan transition-colors text-white font-black">YouTube</a>
                 </div>
-            </div>
         </div>
     </footer>
 
