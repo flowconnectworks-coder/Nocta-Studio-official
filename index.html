@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Pure Sound, Beyond Silence. | Nocta Studio</title>
+    <title>Nocta Studio | Beyond the Screen, Ignite the World.</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,16 +17,16 @@
                 extend: {
                     fontFamily: { sans: ['"Zen Maru Gothic"', 'sans-serif'] },
                     colors: {
-                        'koyoi-emerald': '#14b8a6', 'koyoi-magenta': '#d946ef', 'koyoi-cyan': '#22d3ee',
-                        'koyoi-dark': '#080808', 'koyoi-glass': 'rgba(10, 10, 10, 0.85)', 'koyoi-text': '#f8f9fa',
+                        'nocta-emerald': '#14b8a6', 'nocta-magenta': '#d946ef', 'nocta-cyan': '#22d3ee',
+                        'nocta-dark': '#080808', 'nocta-glass': 'rgba(10, 10, 10, 0.85)', 'nocta-text': '#f8f9fa',
                     },
                     backgroundImage: {
-                        'specialite-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2314b8a6' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2314b8a6' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
                     },
-                    animation: { 'blob': 'blob 12s infinite', 'specialite-shine': 'specialite-shine 2s infinite' },
+                    animation: { 'blob': 'blob 12s infinite', 'shine': 'shine 2s infinite' },
                     keyframes: {
                         blob: { '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' }, '33%': { transform: 'translate(40px, -60px) scale(1.1)' }, '66%': { transform: 'translate(-30px, 30px) scale(0.9)' } },
-                        'specialite-shine': { '0%': { backgroundPosition: '200% center' }, '100%': { backgroundPosition: '-200% center' } }
+                        shine: { '0%': { backgroundPosition: '200% center' }, '100%': { backgroundPosition: '-200% center' } }
                     }
                 }
             }
@@ -41,25 +41,27 @@
         .text-gradient { background: linear-gradient(135deg, #14b8a6 0%, #22d3ee 40%, #d946ef 80%, #f472b6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .glass-panel { background: rgba(15, 15, 15, 0.9); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5); }
         .btn-shine { background-size: 200% auto; background-image: linear-gradient(to right, #14b8a6 0%, #d946ef 50%, #14b8a6 100%); transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
-        .btn-shine:hover { animation: specialite-shine 1.2s linear infinite; transform: translateY(-2px); box-shadow: 0 0 25px rgba(217, 70, 239, 0.3); }
+        .btn-shine:hover { animation: shine 1.2s linear infinite; transform: translateY(-2px); box-shadow: 0 0 25px rgba(217, 70, 239, 0.3); }
         .border-gradient { border: 1px solid; border-image: linear-gradient(135deg, rgba(20,184,166,0.2), rgba(217,70,239,0.2)) 1; }
+        /* タイトルサイズ調整用 */
+        .hero-title { font-size: clamp(1.75rem, 8vw, 6rem); }
     </style>
 </head>
-<body class="relative bg-specialite-pattern">
+<body class="relative bg-grid-pattern">
 
     <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div class="absolute -top-40 left-1/4 w-[600px] h-[600px] bg-koyoi-emerald/5 rounded-full filter blur-[150px] animate-blob"></div>
-        <div class="absolute -bottom-40 right-1/4 w-[600px] h-[600px] bg-koyoi-magenta/5 rounded-full filter blur-[150px] animate-blob" style="animation-delay: 6s;"></div>
+        <div class="absolute -top-40 left-1/4 w-[600px] h-[600px] bg-nocta-emerald/5 rounded-full filter blur-[150px] animate-blob"></div>
+        <div class="absolute -bottom-40 right-1/4 w-[600px] h-[600px] bg-nocta-magenta/5 rounded-full filter blur-[150px] animate-blob" style="animation-delay: 6s;"></div>
     </div>
 
     <header class="fixed top-0 w-full z-50 py-4" id="header">
         <div class="container mx-auto px-4">
             <div class="glass-panel rounded-2xl px-6 md:px-8 py-3 flex justify-between items-center transition-all duration-300">
-                <a href="#" class="flex items-center gap-2.5">
-                    <div class="w-10 h-10 flex items-center justify-center overflow-hidden rounded-lg px-1">
-                        <img src="nocta-icon.png" alt="Nocta Studio Logo" class="h-9 w-auto object-contain">
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="flex-shrink-0 flex items-center justify-center py-1 px-1">
+                        <img src="nocta-icon.png" alt="Logo" class="h-8 md:h-9 w-auto object-contain">
                     </div>
-                    <span class="tracking-tighter text-white font-black text-base md:text-lg">Nocta Studio</span>
+                    <span class="tracking-tighter text-white font-black text-base md:text-lg pr-2">Nocta Studio</span>
                 </a>
                 <nav class="hidden md:flex items-center gap-10">
                     <a href="#about" class="text-[10px] font-black tracking-[0.3em] text-gray-400 hover:text-white transition-colors uppercase">Business</a>
@@ -72,18 +74,18 @@
         </div>
     </header>
 
-    <section class="relative pt-40 pb-20 md:pt-64 md:pb-48">
+    <section class="relative pt-44 pb-24 md:pt-64 md:pb-48">
         <div class="container mx-auto px-4 text-center relative z-10">
             <div data-aos="fade-down" class="inline-flex items-center gap-2 mb-12 md:mb-16 px-5 py-2 rounded-full glass-panel border border-white/5 shadow-lg text-[8px] md:text-[9px] font-black tracking-[0.3em] text-white uppercase">
                 <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-koyoi-emerald opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-koyoi-emerald"></span>
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-nocta-emerald opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-nocta-emerald"></span>
                 </span>
-                Next Generation Creative Production
+                Next Generation Streamer Production
             </div>
             
-            <h1 data-aos="fade-up" class="text-3xl md:text-8xl font-black mb-12 md:mb-16 tracking-tighterUppercase italic leading-[1.2] md:leading-[1.1]">
-                <span class="text-gradient">Pure Sound,<br class="md:hidden"> Beyond Silence.</span>
+            <h1 data-aos="fade-up" class="hero-title font-black mb-12 md:mb-16 tracking-tighter uppercase italic leading-[1.1]">
+                <span class="text-gradient">Beyond the Screen, Ignite the World.</span>
             </h1>
 
             <p data-aos="fade-up" data-aos-delay="200" class="text-xs md:text-lg text-gray-400 mb-12 md:mb-16 max-w-3xl mx-auto font-medium leading-loose tracking-widest uppercase px-4">
@@ -102,70 +104,38 @@
     <section id="about" class="py-16 md:py-24 relative">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto items-stretch">
-                <div data-aos="fade-up" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-koyoi-emerald/30 transition-all text-center flex flex-col h-full">
-                    <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-koyoi-emerald mb-6 md:mb-8 italic uppercase text-center w-full">01 / STRATEGY</div>
+                <div data-aos="fade-up" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-nocta-emerald/30 transition-all text-center flex flex-col h-full">
+                    <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-nocta-emerald mb-6 md:mb-8 italic uppercase text-center w-full">01 / STRATEGY</div>
                     <h3 class="text-base md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight whitespace-nowrap text-center w-full">市場分析とブランディング戦略</h3>
-                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">最新のSNSアルゴリズム解析と独自の市場調査に基づき、タレント一人ひとりに最適なブランディングを展開。独自の立ち位置を確立し、最短距離での成長を支援します。</p>
+                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">最新の配信プラットフォーム解析に基づき、個性を最大化する戦略を立案。最短距離でのファンベース構築を支援します。</p>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="100" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-koyoi-magenta/30 transition-all text-center flex flex-col h-full">
-                    <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-koyoi-magenta mb-6 md:mb-8 italic uppercase text-center w-full">02 / BACKUP</div>
-                    <h3 class="text-base md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight whitespace-nowrap text-center w-full">専門スタッフによる制作支援</h3>
-                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">動画編集、デザイン、配信環境の構築など、各分野の専門スタッフがあなたの表現をバックアップ。クリエイティブの質を最高水準まで引き上げ、活動に専念できる環境を提供します。</p>
+                <div data-aos="fade-up" data-aos-delay="100" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-nocta-magenta/30 transition-all text-center flex flex-col h-full">
+                    <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-nocta-magenta mb-6 md:mb-8 italic uppercase text-center w-full">02 / PRODUCTION</div>
+                    <h3 class="text-base md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight whitespace-nowrap text-center w-full">最高峰の制作・技術支援</h3>
+                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">配信環境の構築から、動画制作、デザインまで各分野のプロがバックアップ。表現の質を最高水準まで引き上げます。</p>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="200" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-koyoi-cyan/30 transition-all text-center flex flex-col h-full">
-                    <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-koyoi-cyan mb-6 md:mb-8 italic uppercase text-center w-full">03 / REVENUE</div>
-                    <h3 class="text-base md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight whitespace-nowrap text-center w-full">最高峰の収益化支援</h3>
-                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">企業タイアップの獲得からオリジナルグッズ展開、コンテンツ販売まで多角的にサポート。ファンの熱狂を確かな価値へと変え、持続可能な活動基盤を構築します。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="talents" class="py-20 md:py-32">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-7xl font-black tracking-tighter text-white italic uppercase mb-12 md:mb-20">Talents</h2>
-            <div class="max-w-6xl mx-auto glass-panel rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-24 relative overflow-hidden">
-                <div class="relative z-10 text-center">
-                    <div class="inline-block border border-white/10 text-white/50 px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[8px] md:text-[9px] font-black tracking-[0.4em] md:tracking-[0.5em] mb-8 md:mb-12 uppercase">1st Gen / Project Starting</div>
-                    <h3 class="text-2xl md:text-6xl font-black mb-12 md:mb-20 text-white tracking-tighter italic">1期生プロジェクト 始動</h3>
-                    <div class="flex flex-col md:flex-row justify-center items-end gap-6 md:gap-8 min-h-[300px] md:min-h-[350px] mb-12 md:mb-20 max-w-5xl mx-auto">
-                        <div class="w-full md:flex-1 h-40 md:h-80 bg-gradient-to-t from-koyoi-emerald/10 to-transparent rounded-[1.5rem] md:rounded-[2rem] border border-white/5 flex items-center justify-center"><span class="text-white/10 text-xl md:text-3xl font-black italic tracking-widest uppercase">Creator</span></div>
-                        <div class="w-full md:flex-1 h-56 md:h-[450px] bg-gradient-to-t from-koyoi-magenta/10 to-transparent rounded-[1.5rem] md:rounded-[2rem] border border-white/5 md:-mt-10 flex items-center justify-center"><span class="text-white/10 text-3xl md:text-5xl font-black italic tracking-widest uppercase">Talent</span></div>
-                        <div class="w-full md:flex-1 h-40 md:h-80 bg-gradient-to-t from-koyoi-cyan/10 to-transparent rounded-[1.5rem] md:rounded-[2rem] border border-white/5 flex items-center justify-center"><span class="text-white/10 text-xl md:text-3xl font-black italic tracking-widest uppercase">Streamer</span></div>
-                    </div>
-                    <p class="text-gray-500 font-black tracking-[0.3em] md:tracking-[0.6em] text-sm md:text-xl italic uppercase">2026.Spring / Debut</p>
+                <div data-aos="fade-up" data-aos-delay="200" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-nocta-cyan/30 transition-all text-center flex flex-col h-full">
+                    <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-nocta-cyan mb-6 md:mb-8 italic uppercase text-center w-full">03 / PARTNERSHIP</div>
+                    <h3 class="text-base md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight whitespace-nowrap text-center w-full">多角的な収益最大化</h3>
+                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">タイアップの獲得からオリジナルグッズ展開まで。活動をビジネスとして成立させ、持続可能な基盤を構築します。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="audition" class="py-20 md:py-32 px-4">
-        <div class="container mx-auto text-center">
-            <div class="glass-panel border-gradient rounded-[2.5rem] md:rounded-[5rem] p-10 md:p-32 relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-br from-koyoi-magenta/5 via-transparent to-koyoi-emerald/5"></div>
-                <div class="relative z-10">
-                    <h2 class="text-3xl md:text-8xl font-black text-white mb-8 md:mb-12 tracking-tighter italic leading-tight">次はあなたの番だ。</h2>
-                    <p class="text-gray-400 text-[10px] md:text-lg font-bold mb-10 md:mb-16 max-w-2xl mx-auto leading-loose tracking-[0.1em] md:tracking-[0.2em] uppercase">必要なのは、あなたの情熱と才能だけ。<br>世界を塗り替える準備は、できているか。</p>
-                    <a href="https://forms.gle/rd2hrK6ZgD35zb9Z7" target="_blank" class="btn-shine text-white text-[10px] md:text-[14px] font-black tracking-[0.3em] md:tracking-[0.5em] px-10 py-5 md:px-16 md:py-8 rounded-xl md:rounded-2xl shadow-2xl uppercase inline-block scale-100 md:scale-125">Open Entry Form</a>
-                    <p class="mt-8 md:mt-12 text-gray-600 text-[8px] md:text-[10px] font-black tracking-[0.2em] md:tracking-[0.4em] uppercase">※Google Formsの外部ページが開きます</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-koyoi-dark pt-20 pb-12 md:pt-32 md:pb-16 border-t border-white/5" id="contact">
+    <footer class="bg-nocta-dark pt-20 pb-12 md:pt-32 md:pb-16 border-t border-white/5" id="contact">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-20 mb-16 md:mb-24">
                 <div class="max-w-xs">
-                    <h4 class="text-xl md:text-2xl font-black mb-6 md:mb-8 text-white tracking-tighter italic border-b-4 border-koyoi-emerald inline-block pb-2 uppercase text-gradient">Nocta Studio</h4>
+                    <h4 class="text-xl md:text-2xl font-black mb-6 md:mb-8 text-white tracking-tighter italic border-b-4 border-nocta-emerald inline-block pb-2 uppercase text-gradient">Nocta Studio</h4>
                     <p class="text-gray-600 text-[8px] md:text-[9px] font-black leading-loose tracking-[0.2em] md:tracking-[0.3em] uppercase">
-                        Next Generation Creative Production.<br>
+                        Next Generation Streamer Production.<br>
                         Operated by <a href="https://glowengine-llc.com/" target="_blank" class="hover:text-white transition-colors border-b border-gray-800">GlowEngine LLC</a>.
                     </p>
                 </div>
                 <div>
-                    <p class="font-black text-[9px] md:text-[10px] tracking-[0.4em] md:tracking-[0.5em] text-koyoi-emerald mb-6 md:mb-10 uppercase text-center md:text-left">Navigation</p>
-                    <ul class="space-y-4 md:space-y-5 font-black text-[9px] md:text-[10px] text-gray-500 tracking-[0.3em] uppercase text-center md:text-left">
+                    <p class="font-black text-[9px] md:text-[10px] tracking-[0.4em] md:tracking-[0.5em] text-nocta-emerald mb-6 md:mb-10 uppercase">Navigation</p>
+                    <ul class="space-y-4 md:space-y-5 font-black text-[9px] md:text-[10px] text-gray-500 tracking-[0.3em] uppercase">
                         <li><a href="#about" class="hover:text-white transition-colors">Business</a></li>
                         <li><a href="#talents" class="hover:text-white transition-colors">Talents</a></li>
                         <li><a href="#audition" class="hover:text-white transition-colors">Audition</a></li>
