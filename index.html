@@ -44,20 +44,21 @@
         .btn-shine:hover { animation: shine 1.2s linear infinite; transform: translateY(-2px); box-shadow: 0 0 25px rgba(217, 70, 239, 0.3); }
         .border-gradient { border: 1px solid; border-image: linear-gradient(135deg, rgba(20,184,166,0.2), rgba(217,70,239,0.2)) 1; }
         
-        /* 修正：スローガンの見切れ対策（paddingに加え、強制的な幅確保） */
+        /* 修正：スローガンの1行固定と見切れ対策 */
         .hero-title { 
-            font-size: clamp(1.2rem, 5vw, 4.2rem); 
+            font-size: clamp(1.1rem, 5vw, 4rem); 
             white-space: nowrap; 
-            padding-right: 0.25em; /* フォントサイズに比例した余白を確保 */
-            margin-right: -0.25em; /* パディングで増えた分のレイアウト位置を相殺 */
             display: inline-block;
+            padding-right: 0.5em; /* ピリオド用の救済スペース */
+            margin-right: -0.5em; 
             overflow: visible !important;
         }
 
-        /* ヘッダー用見切れ対策 */
+        /* 修正：ヘッダーロゴの見切れ対策 */
         .header-logo-text {
             display: inline-block;
-            padding-right: 12px;
+            padding-right: 0.5em; /* StudioのO用の救済スペース */
+            margin-right: -0.5em;
             overflow: visible !important;
         }
     </style>
@@ -74,7 +75,7 @@
             <div class="glass-panel rounded-2xl px-6 md:px-8 py-3 flex justify-between items-center transition-all duration-300">
                 <a href="#" class="flex items-center gap-2 group overflow-visible">
                     <div class="flex-shrink-0 flex items-center justify-center p-1 overflow-visible">
-                        <img src="nocta-icon.png" alt="Logo" class="h-8 md:h-9 w-auto object-contain overflow-visible">
+                        <img src="nocta-icon.png" alt="Logo" class="h-8 md:h-9 w-auto object-contain">
                     </div>
                     <span class="header-logo-text tracking-tighter text-white font-black text-base md:text-lg italic">Nocta Studio</span>
                 </a>
@@ -90,7 +91,7 @@
     </header>
 
     <section class="relative pt-44 pb-24 md:pt-64 md:pb-48 overflow-visible">
-        <div class="container mx-auto px-4 text-center relative z-10 overflow-visible">
+        <div class="container mx-auto px-4 text-center relative z-10">
             <div data-aos="fade-down" class="inline-flex items-center gap-2 mb-12 md:mb-16 px-5 py-2 rounded-full glass-panel border border-white/5 shadow-lg text-[8px] md:text-[9px] font-black tracking-[0.3em] text-white uppercase">
                 <span class="relative flex h-2 w-2">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-nocta-emerald opacity-75"></span>
@@ -99,27 +100,27 @@
                 Next Generation Streamer Production
             </div>
             
-            <h1 data-aos="fade-up" class="hero-title font-black mb-12 md:mb-16 tracking-tighter uppercase italic leading-none overflow-visible">
+            <h1 data-aos="fade-up" class="hero-title font-black mb-12 md:mb-16 tracking-tighter uppercase italic leading-none">
                 <span class="text-gradient">Beyond the Screen, Ignite the World.</span>
             </h1>
 
-            <p data-aos="fade-up" data-aos-delay="200" class="text-xs md:text-lg text-gray-400 mb-12 md:mb-16 max-w-3xl mx-auto font-medium leading-loose tracking-widest uppercase px-4 overflow-visible">
+            <p data-aos="fade-up" data-aos-delay="200" class="text-xs md:text-lg text-gray-400 mb-12 md:mb-16 max-w-3xl mx-auto font-medium leading-loose tracking-widest uppercase px-4">
                 ストリーマー、クリエイター、アーティスト。<br>
                 枠組みを超越する「個」の才能を最大化し、<br class="hidden md:block">
                 新しい時代のエンターテインメントを共につくる表現者集団。
             </p>
 
-            <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 max-w-lg mx-auto px-6 overflow-visible">
+            <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 max-w-lg mx-auto px-6">
                 <a href="https://forms.gle/rd2hrK6ZgD35zb9Z7" target="_blank" class="btn-shine text-white text-[10px] md:text-[11px] font-black tracking-[0.3em] px-8 py-5 md:px-12 md:py-6 rounded-xl transition-all uppercase text-center">Apply Now</a>
                 <a href="#about" class="glass-panel text-white text-[10px] md:text-[11px] font-black tracking-[0.3em] px-8 py-5 md:px-12 md:py-6 rounded-xl hover:bg-white/5 transition-all uppercase text-center">Our Vision</a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-16 md:py-24 relative overflow-visible">
-        <div class="container mx-auto px-4 overflow-visible">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto items-stretch overflow-visible">
-                <div data-aos="fade-up" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-nocta-emerald/30 transition-all text-center flex flex-col h-full overflow-visible">
+    <section id="about" class="py-16 md:py-24 relative">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto items-stretch">
+                <div data-aos="fade-up" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-nocta-emerald/30 transition-all text-center flex flex-col h-full">
                     <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-nocta-emerald mb-6 md:mb-8 italic uppercase text-center w-full">01 / STRATEGY</div>
                     <h3 class="text-base md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight text-center w-full">市場分析とブランディング戦略</h3>
                     <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">プラットフォーム解析に基づき個性を最大化。最短距離でのファンベース構築を支援します。</p>
@@ -132,15 +133,44 @@
                 <div data-aos="fade-up" data-aos-delay="200" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-nocta-cyan/30 transition-all text-center flex flex-col h-full">
                     <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-nocta-cyan mb-6 md:mb-8 italic uppercase text-center w-full">03 / PARTNERSHIP</div>
                     <h3 class="text-base md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight text-center w-full">多角的な収益最大化</h3>
-                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">タイアップからオリジナルグッズ展開まで。活動をビジネスとして成立させ、持続可能な基盤を構築します。</p>
+                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">タイアップからオリジナルグッズ展開まで。持続可能な活動基盤を構築します。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-nocta-dark pt-20 pb-12 md:pt-32 md:pb-16 border-t border-white/5 overflow-visible" id="contact">
-        <div class="container mx-auto px-6 overflow-visible">
-            <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-20 mb-16 md:mb-24 overflow-visible">
+    <section id="talents" class="py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-7xl font-black tracking-tighter text-white italic uppercase mb-12 md:mb-20">Talents</h2>
+            <div class="max-w-6xl mx-auto glass-panel rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-24 relative overflow-hidden text-center flex flex-col items-center">
+                <div class="inline-block border border-white/10 text-white/50 px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[8px] md:text-[9px] font-black tracking-[0.4em] md:tracking-[0.5em] mb-8 md:mb-12 uppercase">1st Gen / Project Starting</div>
+                <h3 class="text-2xl md:text-6xl font-black mb-12 md:mb-20 text-white tracking-tighter italic">1期生プロジェクト 始動</h3>
+                <div class="flex flex-col md:flex-row justify-center items-end gap-6 md:gap-8 min-h-[300px] md:min-h-[350px] mb-12 md:mb-20 w-full max-w-5xl">
+                    <div class="w-full md:flex-1 h-40 md:h-80 bg-gradient-to-t from-nocta-emerald/10 to-transparent rounded-[1.5rem] md:rounded-[2rem] border border-white/5 flex items-center justify-center"><span class="text-white/10 text-xl md:text-3xl font-black italic tracking-widest uppercase">Streamer</span></div>
+                    <div class="w-full md:flex-1 h-56 md:h-[450px] bg-gradient-to-t from-nocta-magenta/10 to-transparent rounded-[1.5rem] md:rounded-[2rem] border border-white/5 flex items-center justify-center"><span class="text-white/10 text-3xl md:text-5xl font-black italic tracking-widest uppercase">Talent</span></div>
+                    <div class="w-full md:flex-1 h-40 md:h-80 bg-gradient-to-t from-nocta-cyan/10 to-transparent rounded-[1.5rem] md:rounded-[2rem] border border-white/5 flex items-center justify-center"><span class="text-white/10 text-xl md:text-3xl font-black italic tracking-widest uppercase">Creator</span></div>
+                </div>
+                <p class="text-gray-500 font-black tracking-[0.3em] md:tracking-[0.6em] text-sm md:text-xl italic uppercase">2026.Spring / Debut</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="audition" class="py-20 md:py-32 px-4">
+        <div class="container mx-auto text-center">
+            <div class="glass-panel border-gradient rounded-[2.5rem] md:rounded-[5rem] p-10 md:p-32 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-nocta-magenta/5 via-transparent to-nocta-emerald/5"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-8xl font-black text-white mb-8 md:mb-12 tracking-tighter italic leading-tight">次はあなたの番だ。</h2>
+                    <p class="text-gray-400 text-[10px] md:text-lg font-bold mb-10 md:mb-16 max-w-2xl mx-auto leading-loose tracking-[0.1em] md:tracking-[0.2em] uppercase">必要なのは、あなたの熱量と個性だけ。<br>世界を塗り替える準備は、できているか。</p>
+                    <a href="https://forms.gle/rd2hrK6ZgD35zb9Z7" target="_blank" class="btn-shine text-white text-[10px] md:text-[14px] font-black tracking-[0.3em] md:tracking-[0.5em] px-10 py-5 md:px-16 md:py-8 rounded-xl md:rounded-2xl shadow-2xl uppercase inline-block scale-100 md:scale-125">Open Entry Form</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-nocta-dark pt-20 pb-12 md:pt-32 md:pb-16 border-t border-white/5" id="contact">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-20 mb-16 md:mb-24">
                 <div class="max-w-xs overflow-visible">
                     <h4 class="text-xl md:text-2xl font-black mb-6 md:mb-8 text-white tracking-tighter italic border-b-4 border-nocta-emerald inline-block pb-2 uppercase text-gradient pr-4 overflow-visible">Nocta Studio</h4>
                     <p class="text-gray-600 text-[8px] md:text-[9px] font-black leading-loose tracking-[0.2em] md:tracking-[0.3em] uppercase">
@@ -148,8 +178,16 @@
                         Operated by <a href="https://glowengine-llc.com/" target="_blank" class="hover:text-white transition-colors border-b border-gray-800">GlowEngine LLC</a>.
                     </p>
                 </div>
+                <div>
+                    <p class="font-black text-[9px] md:text-[10px] tracking-[0.4em] md:tracking-[0.5em] text-nocta-emerald mb-6 md:mb-10 uppercase">Navigation</p>
+                    <ul class="space-y-4 md:space-y-5 font-black text-[9px] md:text-[10px] text-gray-500 tracking-[0.3em] uppercase">
+                        <li><a href="#about" class="hover:text-white transition-colors">Business</a></li>
+                        <li><a href="#talents" class="hover:text-white transition-colors">Talents</a></li>
+                        <li><a href="#audition" class="hover:text-white transition-colors">Audition</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="flex flex-col md:flex-row justify-between items-center pt-10 md:pt-12 border-t border-white/5 gap-6 md:gap-8 text-center md:text-left overflow-visible">
+            <div class="flex flex-col md:flex-row justify-between items-center pt-10 md:pt-12 border-t border-white/5 gap-6 md:gap-8 text-center md:text-left">
                 <p class="text-[8px] md:text-[9px] font-black text-gray-700 tracking-[0.4em] md:tracking-[0.6em] uppercase pr-4">&copy; 2026 GLOWENGINE LLC. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
