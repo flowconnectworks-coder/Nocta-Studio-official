@@ -44,25 +44,19 @@
         .btn-shine:hover { animation: shine 1.2s linear infinite; transform: translateY(-2px); box-shadow: 0 0 25px rgba(217, 70, 239, 0.3); }
         .border-gradient { border: 1px solid; border-image: linear-gradient(135deg, rgba(20,184,166,0.2), rgba(217,70,239,0.2)) 1; }
 
-        /* 修正：スローガンの見切れ対策（paddingに加え、強制的な幅確保） */
-        /* 修正：スローガンの1行固定と見切れ対策 */
+        /* スローガンの1行固定と見切れ対策 */
         .hero-title { 
-            font-size: clamp(1.2rem, 5vw, 4.2rem); 
             font-size: clamp(1.1rem, 5vw, 4rem); 
             white-space: nowrap; 
-            padding-right: 0.25em; /* フォントサイズに比例した余白を確保 */
-            margin-right: -0.25em; /* パディングで増えた分のレイアウト位置を相殺 */
             display: inline-block;
             padding-right: 0.5em; /* ピリオド用の救済スペース */
             margin-right: -0.5em; 
             overflow: visible !important;
         }
 
-        /* ヘッダー用見切れ対策 */
-        /* 修正：ヘッダーロゴの見切れ対策 */
+        /* ヘッダーロゴの見切れ対策 */
         .header-logo-text {
             display: inline-block;
-            padding-right: 12px;
             padding-right: 0.5em; /* StudioのO用の救済スペース */
             margin-right: -0.5em;
             overflow: visible !important;
@@ -81,8 +75,7 @@
             <div class="glass-panel rounded-2xl px-6 md:px-8 py-3 flex justify-between items-center transition-all duration-300">
                 <a href="#" class="flex items-center gap-2 group overflow-visible">
                     <div class="flex-shrink-0 flex items-center justify-center p-1 overflow-visible">
-                        <img src="nocta-icon.png" alt="Logo" class="h-8 md:h-9 w-auto object-contain overflow-visible">
-                        <img src="nocta-icon.png" alt="Logo" class="h-8 md:h-9 w-auto object-contain">
+                        <img src="nocta-icon._white.png" alt="Logo" class="h-8 md:h-9 w-auto object-contain">
                     </div>
                     <span class="header-logo-text tracking-tighter text-white font-black text-base md:text-lg italic">Nocta Studio</span>
                 </a>
@@ -99,7 +92,6 @@
 
     <section class="relative pt-44 pb-24 md:pt-64 md:pb-48 overflow-visible">
         <div class="container mx-auto px-4 text-center relative z-10 overflow-visible">
-        <div class="container mx-auto px-4 text-center relative z-10">
             <div data-aos="fade-down" class="inline-flex items-center gap-2 mb-12 md:mb-16 px-5 py-2 rounded-full glass-panel border border-white/5 shadow-lg text-[8px] md:text-[9px] font-black tracking-[0.3em] text-white uppercase">
                 <span class="relative flex h-2 w-2">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-nocta-emerald opacity-75"></span>
@@ -108,19 +100,16 @@
                 Next Generation Streamer Production
             </div>
 
-            <h1 data-aos="fade-up" class="hero-title font-black mb-12 md:mb-16 tracking-tighter uppercase italic leading-none overflow-visible">
             <h1 data-aos="fade-up" class="hero-title font-black mb-12 md:mb-16 tracking-tighter uppercase italic leading-none">
                 <span class="text-gradient">Beyond the Screen, Ignite the World.</span>
             </h1>
 
             <p data-aos="fade-up" data-aos-delay="200" class="text-xs md:text-lg text-gray-400 mb-12 md:mb-16 max-w-3xl mx-auto font-medium leading-loose tracking-widest uppercase px-4 overflow-visible">
-            <p data-aos="fade-up" data-aos-delay="200" class="text-xs md:text-lg text-gray-400 mb-12 md:mb-16 max-w-3xl mx-auto font-medium leading-loose tracking-widest uppercase px-4">
                 ストリーマー、クリエイター、アーティスト。<br>
                 枠組みを超越する「個」の才能を最大化し、<br class="hidden md:block">
                 新しい時代のエンターテインメントを共につくる表現者集団。
             </p>
 
-            <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 max-w-lg mx-auto px-6 overflow-visible">
             <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 max-w-lg mx-auto px-6">
                 <a href="https://forms.gle/rd2hrK6ZgD35zb9Z7" target="_blank" class="btn-shine text-white text-[10px] md:text-[11px] font-black tracking-[0.3em] px-8 py-5 md:px-12 md:py-6 rounded-xl transition-all uppercase text-center">Apply Now</a>
                 <a href="#about" class="glass-panel text-white text-[10px] md:text-[11px] font-black tracking-[0.3em] px-8 py-5 md:px-12 md:py-6 rounded-xl hover:bg-white/5 transition-all uppercase text-center">Our Vision</a>
@@ -128,10 +117,6 @@
         </div>
     </section>
 
-    <section id="about" class="py-16 md:py-24 relative overflow-visible">
-        <div class="container mx-auto px-4 overflow-visible">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto items-stretch overflow-visible">
-                <div data-aos="fade-up" class="glass-panel p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group hover:border-nocta-emerald/30 transition-all text-center flex flex-col h-full overflow-visible">
     <section id="about" class="py-16 md:py-24 relative">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto items-stretch">
@@ -149,7 +134,6 @@
                     <div class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-nocta-cyan mb-6 md:mb-8 italic uppercase text-center w-full">03 / PARTNERSHIP</div>
                     <h3 class="text-base md:text-xl font-black mb-4 md:mb-5 text-white tracking-tight text-center w-full">多角的な収益最大化</h3>
                     <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">タイアップからオリジナルグッズ展開まで。活動をビジネスとして成立させ、持続可能な基盤を構築します。</p>
-                    <p class="text-gray-500 text-[11px] md:text-xs leading-loose font-medium tracking-wider text-center">タイアップからオリジナルグッズ展開まで。持続可能な活動基盤を構築します。</p>
                 </div>
             </div>
         </div>
@@ -171,9 +155,6 @@
         </div>
     </section>
 
-    <footer class="bg-nocta-dark pt-20 pb-12 md:pt-32 md:pb-16 border-t border-white/5 overflow-visible" id="contact">
-        <div class="container mx-auto px-6 overflow-visible">
-            <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-20 mb-16 md:mb-24 overflow-visible">
     <section id="audition" class="py-20 md:py-32 px-4">
         <div class="container mx-auto text-center">
             <div class="glass-panel border-gradient rounded-[2.5rem] md:rounded-[5rem] p-10 md:p-32 relative overflow-hidden">
@@ -206,7 +187,6 @@
                     </ul>
                 </div>
             </div>
-            <div class="flex flex-col md:flex-row justify-between items-center pt-10 md:pt-12 border-t border-white/5 gap-6 md:gap-8 text-center md:text-left overflow-visible">
             <div class="flex flex-col md:flex-row justify-between items-center pt-10 md:pt-12 border-t border-white/5 gap-6 md:gap-8 text-center md:text-left">
                 <p class="text-[8px] md:text-[9px] font-black text-gray-700 tracking-[0.4em] md:tracking-[0.6em] uppercase pr-4">&copy; 2026 GLOWENGINE LLC. ALL RIGHTS RESERVED.</p>
             </div>
