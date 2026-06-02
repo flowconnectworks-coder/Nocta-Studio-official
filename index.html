@@ -44,20 +44,19 @@
         .btn-shine:hover { animation: shine 1.2s linear infinite; transform: translateY(-2px); box-shadow: 0 0 25px rgba(217, 70, 239, 0.3); }
         .border-gradient { border: 1px solid; border-image: linear-gradient(135deg, rgba(20,184,166,0.2), rgba(217,70,239,0.2)) 1; }
 
-        /* スローガンの1行固定と見切れ対策 */
         .hero-title { 
             font-size: clamp(1.1rem, 5vw, 4rem); 
             white-space: nowrap; 
             display: inline-block;
-            padding-right: 0.5em; /* ピリオド用の救済スペース */
+            padding-right: 0.5em;
             margin-right: -0.5em; 
             overflow: visible !important;
         }
 
-        /* ヘッダーロゴの見切れ対策（テキストから画像になったため調整） */
         .header-logo-img {
             display: inline-block;
             overflow: visible !important;
+            max-width: none;
         }
     </style>
 </head>
@@ -71,11 +70,11 @@
     <header class="fixed top-0 w-full z-50 py-4" id="header">
         <div class="container mx-auto px-4">
             <div class="glass-panel rounded-2xl px-6 md:px-8 py-3 flex justify-between items-center transition-all duration-300">
-                <a href="#" class="flex items-center gap-2 group overflow-visible">
-                    <div class="flex-shrink-0 flex items-center justify-center p-1 overflow-visible">
-                        <img src="nocta-icon._white.png" alt="Nocta Studio Icon" class="h-8 md:h-9 w-auto object-contain">
+                <a href="#" class="flex items-center gap-3 group overflow-visible">
+                    <div class="flex-shrink-0 flex items-center justify-center overflow-visible">
+                        <img src="nocta-icon._white.png" alt="Nocta Studio Icon" class="h-10 md:h-12 w-auto object-contain">
                     </div>
-                    <img src="Noctastudiotext_white.png" alt="Nocta Studio" class="header-logo-img h-4 md:h-5 w-auto object-contain ml-1">
+                    <img src="Noctastudiotext_white.png" alt="Nocta Studio" class="header-logo-img h-8 md:h-10 w-auto object-contain">
                 </a>
                 <nav class="hidden md:flex items-center gap-10">
                     <a href="#about" class="text-[10px] font-black tracking-[0.3em] text-gray-400 hover:text-white transition-colors uppercase">Business</a>
@@ -171,7 +170,7 @@
             <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-20 mb-16 md:mb-24">
                 <div class="max-w-xs overflow-visible">
                     <div class="mb-6 md:mb-8 border-b-4 border-nocta-emerald inline-block pb-2 overflow-visible">
-                        <img src="Noctastudiotext_white.png" alt="Nocta Studio" class="h-6 md:h-8 w-auto object-contain pr-4">
+                        <img src="Noctastudiotext_white.png" alt="Nocta Studio" class="h-10 md:h-12 w-auto object-contain pr-4">
                     </div>
                     <p class="text-gray-600 text-[8px] md:text-[9px] font-black leading-loose tracking-[0.2em] md:tracking-[0.3em] uppercase">
                         Next Generation Streamer Production.<br>
