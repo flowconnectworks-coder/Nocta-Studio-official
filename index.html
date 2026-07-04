@@ -157,12 +157,20 @@
     }
 
     .hero-title {
-      margin: 18px 0 24px;
-      font-size: clamp(4rem, 8vw, 7.6rem);
-      line-height: 1;
-      letter-spacing: 0.01em;
+      margin: 18px 0 26px;
+      font-size: clamp(3.2rem, 8.4vw, 8.2rem);
+      line-height: 0.88;
+      letter-spacing: 0;
       font-weight: 950;
+      text-transform: uppercase;
       font-style: italic;
+    }
+
+    .hero-title span {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 1.4px rgba(17, 24, 39, 0.62);
+      text-shadow: none;
     }
 
     .hero-copy {
@@ -641,7 +649,7 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Next Generation Streamer Production</div>
-          <h1 class="hero-title">Nocta Studio</h1>
+          <h1 class="hero-title">Beyond<br><span>The Screen</span></h1>
           <p class="hero-copy">
             ストリーマー・VTuberの配信活動を包括的に支える、配信者事務所兼エージェンシー。
           </p>
