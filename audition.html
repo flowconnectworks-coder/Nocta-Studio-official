@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audition | Nocta Studio</title>
+  <style>
+    :root { --bg:#f6f8fb; --text:#111827; --muted:#617083; --line:rgba(10,24,38,.12); --cyan:#20d7f5; --green:#24e2ae; --pink:#ff4fd8; --max:1040px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Helvetica Neue",Arial,"Hiragino Sans","Yu Gothic",sans-serif; color:var(--text); background:linear-gradient(rgba(8,24,38,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(8,24,38,.035) 1px,transparent 1px),radial-gradient(circle at 12% 8%,rgba(32,215,245,.2),transparent 28%),radial-gradient(circle at 88% 12%,rgba(255,79,216,.14),transparent 26%),#f6f8fb; background-size:48px 48px,48px 48px,auto,auto,auto; line-height:1.8; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(var(--max),calc(100% - 40px)); margin:0 auto; }
+    header { padding:18px 0; position:sticky; top:0; z-index:10; backdrop-filter:blur(16px); }
+    .header-inner { display:flex; justify-content:space-between; align-items:center; min-height:64px; padding:0 22px; background:rgba(255,255,255,.86); border:1px solid var(--line); box-shadow:0 18px 60px rgba(18,32,48,.12); }
+    .brand { display:flex; gap:12px; align-items:center; font-weight:950; letter-spacing:.05em; text-transform:uppercase; }
+    .brand-mark { display:block; width:36px; height:36px; object-fit:contain; flex:0 0 auto; }
+    .brand-logo-img { display:block; width:clamp(150px,15vw,230px); height:auto; }
+    .nav { display:flex; gap:24px; align-items:center; color:#667386; font-size:.72rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 22px; border:1px solid var(--line); background:#fff; font-size:.76rem; font-weight:950; letter-spacing:.16em; text-transform:uppercase; }
+    .btn-primary { border:0; color:#031014; background:linear-gradient(135deg,var(--green),var(--cyan) 55%,var(--pink)); box-shadow:0 18px 44px rgba(32,215,245,.22); }
+    .hero { padding:96px 0 72px; }
+    .eyebrow { display:inline-flex; gap:10px; align-items:center; color:var(--cyan); font-size:.72rem; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+    .eyebrow::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--green); }
+    h1 { margin:18px 0 22px; font-size:clamp(3.4rem,9vw,8rem); line-height:.9; font-weight:950; font-style:italic; text-transform:uppercase; }
+    .lead { max-width:720px; color:#445266; font-size:1.08rem; font-weight:700; letter-spacing:.04em; }
+    section { padding:72px 0; border-top:1px solid rgba(10,24,38,.08); }
+    .section-title { margin:8px 0 28px; font-size:clamp(2rem,5vw,4.6rem); line-height:.95; font-weight:950; font-style:italic; text-transform:uppercase; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .card { padding:28px; border:1px solid var(--line); background:rgba(255,255,255,.86); box-shadow:0 18px 52px rgba(18,32,48,.08); }
+    .card b { color:var(--cyan); font-size:.74rem; letter-spacing:.18em; }
+    .card h3 { margin:12px 0; font-size:1.2rem; }
+    .card p, li { color:var(--muted); font-weight:650; }
+    .flow { display:grid; gap:12px; }
+    .flow-row { display:grid; grid-template-columns:56px 1fr; gap:16px; align-items:center; padding:18px; border:1px solid var(--line); background:rgba(255,255,255,.86); }
+    .flow-row b { display:grid; place-items:center; width:44px; height:44px; background:var(--cyan); color:#061015; }
+    footer { padding:48px 0; border-top:1px solid var(--line); color:var(--muted); font-size:.78rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    @media (max-width:760px){ .nav a:not(.btn){display:none;} .grid{grid-template-columns:1fr;} h1{font-size:clamp(3rem,18vw,5rem);} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="nocta-studio-redesign.html"><img src="./icon_nocta_cropped.png" alt="" class="brand-mark"><img src="./nocta-studio-logo-transparent.png" alt="Nocta Studio" class="brand-logo-img"></a>
+      <nav class="nav"><a href="nocta-studio-redesign.html">Home</a><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfN9PYLymGhIp9BRVoPd4rtpXFU39ATbPbW57Z9eUju24phLQ/viewform" target="_blank" rel="noopener">Entry</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Audition</div>
+        <h1>Nocta Studio<br>Audition</h1>
+        <p class="lead">ストリーマー・VTuberとして継続的に活動したい方を募集しています。配信活動の運営、企画相談、外部展開まで、活動状況に合わせて包括的にサポートします。</p>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfN9PYLymGhIp9BRVoPd4rtpXFU39ATbPbW57Z9eUju24phLQ/viewform" target="_blank" rel="noopener">応募フォームへ</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="eyebrow">Requirement</div>
+        <h2 class="section-title">Requirement</h2>
+        <div class="grid">
+          <article class="card"><b>応募対象</b><h3>ストリーマー・VTuberとして活動したい方</h3><p>配信経験の有無は問いません。活動への熱量、継続する意思、得意なジャンルや個性を重視します。</p></article>
+          <article class="card"><b>歓迎要件</b><h3>すでに配信経験やSNS活動がある方</h3><p>現在のアカウントや活動実績がある場合は、応募時にURLや実績をお知らせください。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="eyebrow">Screening Process</div>
+        <h2 class="section-title">Flow</h2>
+        <div class="flow">
+          <div class="flow-row"><b>01</b><div><strong>フォーム応募</strong><br>活動内容、SNS、得意ジャンルを確認します。</div></div>
+          <div class="flow-row"><b>02</b><div><strong>オンライン面談</strong><br>活動方針やサポート内容の相性をすり合わせます。</div></div>
+          <div class="flow-row"><b>03</b><div><strong>準備期間</strong><br>必要に応じて活動設計、素材、配信環境を整えます。</div></div>
+          <div class="flow-row"><b>04</b><div><strong>活動開始</strong><br>初動設計から継続運用まで伴走します。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="eyebrow">FAQ</div>
+        <h2 class="section-title">FAQ</h2>
+        <div class="grid">
+          <article class="card"><h3>今使っているアカウントを変えたくないのですが大丈夫ですか？</h3><p>問題ありません。現在の活動状況やアカウント運用を確認したうえで、一度ご相談ください。</p></article>
+          <article class="card"><h3>配信環境が整っていなくても大丈夫ですか？</h3><p>現状を確認したうえで、必要な機材や環境づくりを一緒に整理します。</p></article>
+          <article class="card"><h3>未経験でも応募できますか？</h3><p>応募可能です。経験よりも、継続して活動する意思や表現したい方向性を重視します。</p></article>
+          <article class="card"><h3>再応募はできますか？</h3><p>可能です。前回の応募内容や活動状況の変化も含めて確認します。</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">Operated by GlowEngine LLC. © 2026 All Rights Reserved.</div></footer>
+</body>
+</html>
