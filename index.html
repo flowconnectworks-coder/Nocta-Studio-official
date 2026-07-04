@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nocta Studio | Streamer Production</title>
+
   <style>
     :root {
-      --bg: #f6f8fb;
       --text: #111827;
       --muted: #617083;
       --line: rgba(10, 24, 38, 0.12);
@@ -17,6 +17,7 @@
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -113,13 +114,6 @@
       font-weight: 900;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      border-color: rgba(32, 215, 245, 0.8);
-      background: rgba(32, 215, 245, 0.1);
     }
 
     .btn-primary {
@@ -163,14 +157,12 @@
     }
 
     .hero-title {
-      margin: 16px 0 26px;
-    }
-
-    .hero-logo-img {
-      display: block;
-      width: min(900px, 100%);
-      height: auto;
-      margin: 22px 0 30px;
+      margin: 18px 0 24px;
+      font-size: clamp(4rem, 8vw, 7.6rem);
+      line-height: 1;
+      letter-spacing: 0.01em;
+      font-weight: 950;
+      font-style: italic;
     }
 
     .hero-copy {
@@ -199,10 +191,9 @@
       margin: 8px 0 0;
       font-size: clamp(2rem, 5vw, 4.8rem);
       line-height: 0.95;
-      letter-spacing: 0;
-      text-transform: uppercase;
       font-weight: 950;
       font-style: italic;
+      text-transform: uppercase;
     }
 
     .section-copy {
@@ -234,8 +225,8 @@
       place-items: end center;
       padding: 28px;
       background:
-        radial-gradient(circle at 50% 22%, rgba(255, 255, 255, 0.8), transparent 22%),
-        linear-gradient(135deg, rgba(32, 215, 245, 0.28), rgba(255, 79, 216, 0.16)),
+        radial-gradient(circle at 50% 22%, rgba(255,255,255,0.8), transparent 22%),
+        linear-gradient(135deg, rgba(32,215,245,0.28), rgba(255,79,216,0.16)),
         #eaf6fb;
       overflow: hidden;
     }
@@ -250,27 +241,27 @@
       transform: translateX(-50%);
       border-radius: 90px 90px 20px 20px;
       background:
-        radial-gradient(circle at 50% 18%, rgba(17, 24, 39, 0.86) 0 34px, transparent 35px),
-        linear-gradient(180deg, rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.18));
-      box-shadow: 0 24px 70px rgba(17, 24, 39, 0.18);
+        radial-gradient(circle at 50% 18%, rgba(17,24,39,0.86) 0 34px, transparent 35px),
+        linear-gradient(180deg, rgba(17,24,39,0.8), rgba(17,24,39,0.18));
+      box-shadow: 0 24px 70px rgba(17,24,39,0.18);
     }
 
     .member-card:nth-child(2) .member-visual {
       background:
-        radial-gradient(circle at 52% 20%, rgba(255, 255, 255, 0.85), transparent 22%),
-        linear-gradient(135deg, rgba(36, 226, 174, 0.25), rgba(255, 79, 216, 0.18)),
+        radial-gradient(circle at 52% 20%, rgba(255,255,255,0.85), transparent 22%),
+        linear-gradient(135deg, rgba(36,226,174,0.25), rgba(255,79,216,0.18)),
         #f4eef9;
     }
 
     .member-initial {
       position: relative;
       z-index: 1;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255,255,255,0.9);
       font-size: 5.4rem;
       line-height: 1;
       font-weight: 950;
       font-style: italic;
-      text-shadow: 0 12px 36px rgba(17, 24, 39, 0.25);
+      text-shadow: 0 12px 36px rgba(17,24,39,0.25);
     }
 
     .member-body {
@@ -294,7 +285,6 @@
       font-size: clamp(1.7rem, 3vw, 2.7rem);
       line-height: 1.1;
       font-weight: 950;
-      letter-spacing: 0.02em;
     }
 
     .member-copy {
@@ -315,7 +305,7 @@
       align-items: center;
       min-height: 34px;
       padding: 0 12px;
-      border: 1px solid rgba(10, 24, 38, 0.12);
+      border: 1px solid rgba(10,24,38,0.12);
       background: #fff;
       color: #334155;
       font-size: 0.68rem;
@@ -336,11 +326,12 @@
       border: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.86);
       box-shadow: 0 18px 52px rgba(18, 32, 48, 0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .business-card:hover,
-    .news-card:hover {
+    .news-card:hover,
+    .link-card:hover {
       transform: translateY(-4px);
       border-color: rgba(32, 215, 245, 0.45);
       background: #fff;
@@ -363,8 +354,7 @@
       line-height: 1.45;
     }
 
-    .business-card p,
-    .news-card p {
+    .business-card p {
       margin: 0;
       color: var(--muted);
       font-size: 0.92rem;
@@ -372,12 +362,12 @@
 
     .audition-panel {
       padding: clamp(30px, 5vw, 58px);
-      border: 1px solid rgba(32, 215, 245, 0.35);
+      border: 1px solid rgba(32,215,245,0.35);
       background:
-        linear-gradient(135deg, rgba(32, 215, 245, 0.18), transparent 38%),
-        linear-gradient(315deg, rgba(255, 79, 216, 0.14), transparent 44%),
-        rgba(255, 255, 255, 0.9);
-      box-shadow: 0 28px 90px rgba(18, 32, 48, 0.14);
+        linear-gradient(135deg, rgba(32,215,245,0.18), transparent 38%),
+        linear-gradient(315deg, rgba(255,79,216,0.14), transparent 44%),
+        rgba(255,255,255,0.9);
+      box-shadow: 0 28px 90px rgba(18,32,48,0.14);
     }
 
     .link-card {
@@ -387,15 +377,10 @@
       min-height: 260px;
       padding: 30px;
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255,255,255,0.82);
       color: var(--text);
-      box-shadow: 0 18px 52px rgba(18, 32, 48, 0.08);
+      box-shadow: 0 18px 52px rgba(18,32,48,0.08);
       transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .link-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(32, 215, 245, 0.55);
     }
 
     .link-card-audition {
@@ -452,14 +437,6 @@
       letter-spacing: 0.04em;
     }
 
-    .link-card span {
-      color: var(--muted);
-      font-size: 0.86rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
     .audition-cta span {
       display: inline-flex;
       align-items: center;
@@ -470,6 +447,9 @@
       background: linear-gradient(135deg, var(--green), var(--cyan) 55%, var(--pink));
       box-shadow: 0 14px 36px rgba(32, 215, 245, 0.22);
       white-space: nowrap;
+      font-size: 0.86rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
     }
 
     .link-card-business h3 {
@@ -480,15 +460,23 @@
       text-transform: uppercase;
     }
 
+    .link-card span {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
     .news-thumb {
       aspect-ratio: 16 / 9;
       display: grid;
       place-items: center;
       background:
-        linear-gradient(135deg, rgba(32, 215, 245, 0.2), rgba(255, 79, 216, 0.14)),
+        linear-gradient(135deg, rgba(32,215,245,0.2), rgba(255,79,216,0.14)),
         #edf4fb;
       border-bottom: 1px solid var(--line);
-      color: rgba(17, 24, 39, 0.22);
+      color: rgba(17,24,39,0.22);
       font-size: 2rem;
       font-weight: 950;
       font-style: italic;
@@ -586,7 +574,12 @@
       }
 
       .brand-logo-img {
-        width: 160px;
+        width: 150px;
+      }
+
+      .brand-mark {
+        width: 32px;
+        height: 32px;
       }
 
       .nav .btn {
@@ -598,6 +591,10 @@
       .hero {
         min-height: auto;
         padding-top: 116px;
+      }
+
+      .hero-title {
+        font-size: clamp(3rem, 15vw, 5rem);
       }
 
       .section {
@@ -624,7 +621,7 @@
     <div class="container">
       <div class="header-inner">
         <a class="brand" href="#">
-          <img src="./icon_nocta_cropped.png" alt="" class="brand-mark" />
+          <img src="./icon_nocta.png" alt="" class="brand-mark" />
           <img src="./nocta-studio-logo-transparent.png" alt="Nocta Studio" class="brand-logo-img" />
         </a>
 
@@ -633,7 +630,7 @@
           <a href="#business">Business</a>
           <a href="#audition">Audition</a>
           <a href="#news">News</a>
-          <a class="btn btn-primary" href="audition.html">Entry</a>
+          <a class="btn btn-primary" href="./audition.html">Entry</a>
         </nav>
       </div>
     </div>
@@ -644,9 +641,7 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Next Generation Streamer Production</div>
-          <h1 class="hero-title">
-            <img src="./nocta-studio-logo-transparent.png" alt="Nocta Studio" class="hero-logo-img" />
-          </h1>
+          <h1 class="hero-title">Nocta Studio</h1>
           <p class="hero-copy">
             ストリーマー・VTuberの配信活動を包括的に支える、配信者事務所兼エージェンシー。
           </p>
@@ -764,7 +759,7 @@
           </div>
 
           <div class="link-card-grid">
-            <a class="link-card link-card-audition audition-cta" href="audition.html">
+            <a class="link-card link-card-audition audition-cta" href="./audition.html">
               <div>
                 <div class="link-card-label">Audition Page</div>
                 <h3>Nocta Studioでは、共に活動するストリーマー・VTuberを募集しています。</h3>
@@ -828,7 +823,7 @@
 
     <section class="section" id="business-contact">
       <div class="container">
-        <a class="link-card link-card-business" href="business-inquiry.html">
+        <a class="link-card link-card-business" href="./business-inquiry.html">
           <div>
             <div class="link-card-label">Company Contact</div>
             <h3>Business Inquiry</h3>
