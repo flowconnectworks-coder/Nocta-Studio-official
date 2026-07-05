@@ -202,7 +202,8 @@
 
     /* ========================================
       HERO
-      左基準 + THE SCREENだけ右にずらして重心調整
+      青文字もタイトルも左基準
+      The Screen は1行
     ========================================= */
     .hero {
       min-height: 82vh;
@@ -213,18 +214,20 @@
     }
 
     .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 980px);
-      align-items: center;
-      justify-content: center;
+      display: block;
       text-align: left;
       transform: translateY(-12px);
     }
 
+    .hero-content {
+      max-width: 1080px;
+      margin: 0;
+    }
+
     .hero-title {
       margin: 16px 0 28px;
-      font-size: clamp(5rem, 10.2vw, 10rem);
-      line-height: 0.86;
+      font-size: clamp(4.6rem, 9.1vw, 8.9rem);
+      line-height: 0.88;
       letter-spacing: 0;
       font-weight: 950;
       text-transform: uppercase;
@@ -236,7 +239,8 @@
       color: transparent;
       -webkit-text-stroke: 1.5px rgba(17,24,39,0.62);
       text-shadow: none;
-      transform: translateX(clamp(34px, 5vw, 86px));
+      white-space: nowrap;
+      transform: none;
     }
 
     .hero-copy {
@@ -659,8 +663,8 @@
       .nav .btn { min-height: 40px; padding: 0 14px; font-size: 0.68rem; }
       .hero { min-height: auto; padding-top: 112px; }
       .hero-grid { transform: none; }
-      .hero-title { font-size: clamp(3.5rem, 19vw, 5.8rem); }
-      .hero-title span { transform: translateX(0); }
+      .hero-title { font-size: clamp(3.5rem, 17vw, 5.8rem); }
+      .hero-title span { white-space: normal; }
       .section { padding: 76px 0; }
       .section-title { font-size: clamp(2.5rem, 15vw, 4.5rem); }
       .news-card h3 { min-height: auto; }
@@ -698,7 +702,7 @@
     ========================================= -->
     <section class="hero">
       <div class="container hero-grid">
-        <div>
+        <div class="hero-content">
           <div class="eyebrow">Next Generation Streamer Production</div>
           <h1 class="hero-title">
             Beyond
