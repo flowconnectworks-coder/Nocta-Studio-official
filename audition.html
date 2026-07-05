@@ -219,6 +219,7 @@
 
     /* ========================================
       HERO
+      カード内の重心を中央に調整
     ========================================= */
     .hero {
       padding: 96px 0 72px;
@@ -226,8 +227,9 @@
     }
 
     .hero-box {
-      max-width: 860px;
-      padding: clamp(28px, 5vw, 52px);
+      width: min(860px, 100%);
+      margin: 0 auto;
+      padding: clamp(34px, 5vw, 56px);
       border: 1px solid rgba(32, 215, 245, 0.32);
       border-top: 5px solid var(--cyan);
       background:
@@ -235,11 +237,17 @@
         linear-gradient(315deg, rgba(255,79,216,0.12), transparent 44%),
         rgba(255,255,255,0.9);
       box-shadow: 0 24px 80px rgba(18, 32, 48, 0.12);
+      text-align: center;
+    }
+
+    .hero-box .eyebrow {
+      justify-content: center;
     }
 
     .hero-title {
-      margin: 14px 0 18px;
-      font-size: clamp(1.65rem, 3.4vw, 2.8rem);
+      max-width: 760px;
+      margin: 16px auto 20px;
+      font-size: clamp(1.65rem, 3.2vw, 2.7rem);
       line-height: 1.35;
       font-weight: 950;
       letter-spacing: 0.02em;
@@ -247,7 +255,7 @@
 
     .lead {
       max-width: 760px;
-      margin: 0 0 30px;
+      margin: 0 auto 30px;
       color: #445266;
       font-size: 1.04rem;
       font-weight: 700;
@@ -295,11 +303,16 @@
 
     /* ========================================
       FOOTER
+      index と同じ中央寄せバランス
     ========================================= */
     footer {
-      padding: 48px 0;
+      padding: 46px 0;
       border-top: 1px solid var(--line);
       color: var(--muted);
+      text-align: center;
+    }
+
+    footer .container {
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.12em;
@@ -363,6 +376,14 @@
 
       section {
         padding: 62px 0;
+      }
+
+      .hero-box {
+        text-align: left;
+      }
+
+      .hero-box .eyebrow {
+        justify-content: flex-start;
       }
 
       .nowrap {
