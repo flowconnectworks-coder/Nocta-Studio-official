@@ -6,6 +6,8 @@
   <title>Nocta Studio | Streamer Production</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&display=swap');
+
     :root {
       --text: #111827;
       --muted: #617083;
@@ -35,10 +37,7 @@
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .container {
       width: min(var(--max), calc(100% - 40px));
@@ -80,10 +79,13 @@
       flex: 0 0 auto;
     }
 
-    .brand-logo-img {
-      display: block;
-      width: clamp(150px, 15vw, 230px);
-      height: auto;
+    .brand-name {
+      font-family: "Chakra Petch", "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(1.35rem, 2vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--text);
     }
 
     .nav {
@@ -95,10 +97,6 @@
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-    }
-
-    .nav a:hover {
-      color: var(--text);
     }
 
     .btn {
@@ -160,7 +158,6 @@
       margin: 18px 0 26px;
       font-size: clamp(3.2rem, 8.4vw, 8.2rem);
       line-height: 0.88;
-      letter-spacing: 0;
       font-weight: 950;
       text-transform: uppercase;
       font-style: italic;
@@ -170,7 +167,6 @@
       display: block;
       color: transparent;
       -webkit-text-stroke: 1.4px rgba(17, 24, 39, 0.62);
-      text-shadow: none;
     }
 
     .hero-copy {
@@ -266,10 +262,8 @@
       z-index: 1;
       color: rgba(255,255,255,0.9);
       font-size: 5.4rem;
-      line-height: 1;
       font-weight: 950;
       font-style: italic;
-      text-shadow: 0 12px 36px rgba(17,24,39,0.25);
     }
 
     .member-body {
@@ -334,15 +328,6 @@
       border: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.86);
       box-shadow: 0 18px 52px rgba(18, 32, 48, 0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .business-card:hover,
-    .news-card:hover,
-    .link-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(32, 215, 245, 0.45);
-      background: #fff;
     }
 
     .business-card {
@@ -388,16 +373,10 @@
       background: rgba(255,255,255,0.82);
       color: var(--text);
       box-shadow: 0 18px 52px rgba(18,32,48,0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .link-card-audition {
-      border-top: 5px solid var(--cyan);
-    }
-
-    .link-card-business {
-      border-top: 5px solid var(--pink);
-    }
+    .link-card-audition { border-top: 5px solid var(--cyan); }
+    .link-card-business { border-top: 5px solid var(--pink); }
 
     .audition-cta {
       display: grid;
@@ -416,9 +395,7 @@
       text-transform: uppercase;
     }
 
-    .link-card-business .link-card-label {
-      color: var(--pink);
-    }
+    .link-card-business .link-card-label { color: var(--pink); }
 
     .link-card h3 {
       margin: 12px 0 14px;
@@ -491,9 +468,7 @@
       text-transform: uppercase;
     }
 
-    .news-body {
-      padding: 22px;
-    }
+    .news-body { padding: 22px; }
 
     .meta {
       display: flex;
@@ -505,9 +480,7 @@
       letter-spacing: 0.08em;
     }
 
-    .tag {
-      color: var(--muted);
-    }
+    .tag { color: var(--muted); }
 
     .news-card h3 {
       min-height: 4.8em;
@@ -535,91 +508,28 @@
     }
 
     @media (max-width: 900px) {
-      .nav a:not(.btn) {
-        display: none;
-      }
-
-      .section-head {
-        display: block;
-      }
-
-      .section-copy {
-        margin-top: 18px;
-      }
-
-      .member-grid,
-      .business-grid,
-      .news-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .member-card {
-        grid-template-columns: 1fr;
-      }
-
-      .member-visual {
-        min-height: 280px;
-      }
-
-      .audition-cta {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
+      .nav a:not(.btn) { display: none; }
+      .section-head { display: block; }
+      .section-copy { margin-top: 18px; }
+      .member-grid, .business-grid, .news-grid { grid-template-columns: 1fr; }
+      .member-card { grid-template-columns: 1fr; }
+      .member-visual { min-height: 280px; }
+      .audition-cta { grid-template-columns: 1fr; gap: 20px; }
     }
 
     @media (max-width: 560px) {
-      .container {
-        width: min(var(--max), calc(100% - 28px));
-      }
-
-      .site-header {
-        padding: 10px 0;
-      }
-
-      .header-inner {
-        min-height: 58px;
-        padding: 0 12px 0 14px;
-      }
-
-      .brand-logo-img {
-        width: 150px;
-      }
-
-      .brand-mark {
-        width: 32px;
-        height: 32px;
-      }
-
-      .nav .btn {
-        min-height: 40px;
-        padding: 0 14px;
-        font-size: 0.68rem;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-top: 116px;
-      }
-
-      .hero-title {
-        font-size: clamp(3rem, 15vw, 5rem);
-      }
-
-      .section {
-        padding: 72px 0;
-      }
-
-      .news-card h3 {
-        min-height: auto;
-      }
-
-      .footer-inner {
-        display: block;
-      }
-
-      .footer-inner p {
-        margin-top: 12px;
-      }
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .site-header { padding: 10px 0; }
+      .header-inner { min-height: 58px; padding: 0 12px 0 14px; }
+      .brand-name { font-size: 1.35rem; }
+      .brand-mark { width: 32px; height: 32px; }
+      .nav .btn { min-height: 40px; padding: 0 14px; font-size: 0.68rem; }
+      .hero { min-height: auto; padding-top: 116px; }
+      .hero-title { font-size: clamp(3rem, 15vw, 5rem); }
+      .section { padding: 72px 0; }
+      .news-card h3 { min-height: auto; }
+      .footer-inner { display: block; }
+      .footer-inner p { margin-top: 12px; }
     }
   </style>
 </head>
@@ -630,7 +540,7 @@
       <div class="header-inner">
         <a class="brand" href="#">
           <img src="./icon_nocta_cropped.png" alt="" class="brand-mark" />
-          <img src="./nocta-studio-logo-transparent.png" alt="Nocta Studio" class="brand-logo-img" />
+          <span class="brand-name">Nocta Studio</span>
         </a>
 
         <nav class="nav" aria-label="Main navigation">
