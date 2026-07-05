@@ -3,131 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nocta Studio | Streamer Production</title>
+  <title>Nocta Studio | Streamer / VTuber Production</title>
+
+  <!-- ========================================
+    フォント設定
+    事務所名ロゴ風の文字は Russo One を使用
+  ========================================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Noto+Sans+JP:wght@500;700;900&family=Russo+One&display=swap" rel="stylesheet">
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&display=swap');
-
+    /* ========================================
+      基本カラー
+      色を変えたい場合はここを中心に変更
+    ========================================= */
     :root {
-      --text: #111827;
-      --muted: #617083;
-      --line: rgba(10, 24, 38, 0.12);
-      --cyan: #20d7f5;
-      --green: #24e2ae;
-      --pink: #ff4fd8;
-      --max: 1120px;
+      --bg: #f7fbff;
+      --text: #101827;
+      --muted: #506176;
+      --line: rgba(16, 24, 39, 0.12);
+      --cyan: #13c8e8;
+      --green: #28e0ad;
+      --pink: #f05adf;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(30, 80, 120, 0.12);
+      --gradient: linear-gradient(135deg, #27e0b9 0%, #19c7ef 52%, #f45adb 100%);
     }
 
-    * { box-sizing: border-box; }
+    /* ========================================
+      全体設定
+    ========================================= */
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
       color: var(--text);
+      font-family: "Inter", "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
       background:
-        linear-gradient(rgba(8, 24, 38, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(8, 24, 38, 0.035) 1px, transparent 1px),
-        radial-gradient(circle at 12% 8%, rgba(32, 215, 245, 0.2), transparent 28%),
-        radial-gradient(circle at 88% 12%, rgba(255, 79, 216, 0.14), transparent 26%),
-        linear-gradient(180deg, #fff 0%, #f6f8fb 42%, #eef3f8 100%);
+        linear-gradient(rgba(16, 24, 39, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 24, 39, 0.045) 1px, transparent 1px),
+        radial-gradient(circle at 0% 10%, rgba(19, 200, 232, 0.2), transparent 32%),
+        radial-gradient(circle at 100% 18%, rgba(240, 90, 223, 0.18), transparent 34%),
+        #f7fbff;
       background-size: 48px 48px, 48px 48px, auto, auto, auto;
-      line-height: 1.75;
-      overflow-x: hidden;
+      line-height: 1.8;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     .container {
-      width: min(var(--max), calc(100% - 40px));
+      width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
 
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 30;
-      padding: 18px 0;
-    }
-
-    .header-inner {
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 0 18px 0 24px;
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 18px 60px rgba(18, 32, 48, 0.12);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-      flex: 0 0 auto;
-    }
-
-    .brand-name {
-      font-family: "Chakra Petch", "Helvetica Neue", Arial, sans-serif;
-      font-size: clamp(1.35rem, 2vw, 1.85rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      color: var(--text);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      color: #667386;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 46px;
-      padding: 0 22px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.72);
-      color: var(--text);
-      font-size: 0.76rem;
-      font-weight: 900;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .btn-primary {
-      border-color: transparent;
-      color: #031014;
-      background: linear-gradient(135deg, var(--green), var(--cyan) 55%, var(--pink));
-      box-shadow: 0 0 30px rgba(32, 215, 245, 0.22);
+    .section {
+      padding: 94px 0;
+      border-top: 1px solid rgba(16, 24, 39, 0.08);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      color: var(--cyan);
-      font-size: 0.72rem;
-      font-weight: 800;
+      color: #02bfe5;
+      font-size: 0.78rem;
+      font-weight: 900;
       letter-spacing: 0.22em;
       text-transform: uppercase;
     }
@@ -136,22 +93,143 @@
       content: "";
       width: 8px;
       height: 8px;
-      border-radius: 50%;
+      border-radius: 999px;
       background: var(--green);
-      box-shadow: 0 0 18px var(--green);
+      box-shadow: 0 0 18px rgba(40, 224, 173, 0.6);
     }
 
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.9fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 42px;
+    }
+
+    .section-title {
+      margin: 14px 0 0;
+      font-size: clamp(2.8rem, 6.4vw, 5.8rem);
+      line-height: 0.92;
+      font-weight: 950;
+      font-style: italic;
+      text-transform: uppercase;
+    }
+
+    .section-lead {
+      margin: 24px 0 0;
+      color: #26384e;
+      font-weight: 800;
+      line-height: 2;
+    }
+
+    /* ========================================
+      ヘッダー
+      ロゴ画像は icon_nocta_cropped.png
+      事務所名フォントは .brand-name で変更
+    ========================================= */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 18px 0;
+      background: rgba(247, 251, 255, 0.78);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(16, 24, 39, 0.08);
+    }
+
+    .header-inner {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 10px 16px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(16, 24, 39, 0.08);
+      box-shadow: 0 18px 60px rgba(30, 80, 120, 0.1);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    .brand-name {
+      font-family: "Russo One", "Inter", sans-serif;
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #5c6b7d;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    /* ========================================
+      ボタン
+    ========================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 24px;
+      border: 1px solid rgba(16, 24, 39, 0.16);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 18px 42px rgba(30, 80, 120, 0.08);
+    }
+
+    .btn-primary {
+      border: 0;
+      color: #07101d;
+      background: var(--gradient);
+      box-shadow: 0 20px 54px rgba(19, 200, 232, 0.22);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    /* ========================================
+      HERO
+      メインコピーを変えたい場合は HTML の h1 と p を変更
+    ========================================= */
     .hero {
-      min-height: 100vh;
+      min-height: 640px;
       display: grid;
       align-items: center;
-      padding: 140px 0 96px;
+      padding: 86px 0 92px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 920px);
-      justify-content: center;
+    .hero-inner {
+      max-width: 920px;
+      margin: 0 auto;
     }
 
     .hero-title {
@@ -159,606 +237,500 @@
       font-size: clamp(3.2rem, 8.4vw, 8.2rem);
       line-height: 0.88;
       font-weight: 950;
-      text-transform: uppercase;
       font-style: italic;
+      text-transform: uppercase;
     }
 
     .hero-title span {
       display: block;
       color: transparent;
       -webkit-text-stroke: 1.4px rgba(17, 24, 39, 0.62);
+      text-stroke: 1.4px rgba(17, 24, 39, 0.62);
     }
 
     .hero-copy {
-      max-width: 880px;
+      max-width: 760px;
       margin: 0;
-      color: #445266;
-      font-size: clamp(1rem, 1.55vw, 1.16rem);
-      font-weight: 700;
-      letter-spacing: 0.06em;
+      color: #26384e;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      font-weight: 900;
+      line-height: 2;
     }
 
-    .section {
-      padding: 104px 0;
-      border-top: 1px solid rgba(10, 24, 38, 0.08);
-    }
-
-    .section-head {
+    .hero-actions {
       display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 32px;
-      margin-bottom: 34px;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
     }
 
-    .section-title {
-      margin: 8px 0 0;
-      font-size: clamp(2rem, 5vw, 4.8rem);
+    /* ========================================
+      TALENTS
+      所属タレントが増えたら .talent-card を追加
+    ========================================= */
+    .talent-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .talent-card {
+      min-height: 220px;
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(16, 24, 39, 0.12);
+      box-shadow: var(--shadow);
+    }
+
+    .talent-status {
+      color: var(--cyan);
+      font-size: 0.72rem;
+      font-weight: 950;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .talent-name {
+      margin: 18px 0 12px;
+      font-size: clamp(1.7rem, 3.4vw, 3rem);
+      line-height: 1;
+      font-weight: 950;
+      font-style: italic;
+      text-transform: uppercase;
+    }
+
+    .talent-card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    /* ========================================
+      BUSINESS
+    ========================================= */
+    .business-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .business-card {
+      padding: 28px;
+      min-height: 220px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(16, 24, 39, 0.12);
+      box-shadow: var(--shadow);
+    }
+
+    .business-number {
+      color: var(--cyan);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.18em;
+    }
+
+    .business-card h3 {
+      margin: 22px 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.35;
+    }
+
+    .business-card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    /* ========================================
+      AUDITION CTA
+      応募ページへの導線
+    ========================================= */
+    .audition-panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      padding: 36px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(19, 200, 232, 0.45);
+      border-top: 5px solid rgba(19, 200, 232, 0.75);
+      box-shadow: var(--shadow);
+    }
+
+    .audition-panel h3 {
+      margin: 12px 0;
+      font-size: clamp(2.1rem, 5vw, 4.6rem);
       line-height: 0.95;
       font-weight: 950;
       font-style: italic;
       text-transform: uppercase;
     }
 
-    .section-copy {
-      max-width: 420px;
-      color: var(--muted);
-      font-size: 0.95rem;
+    .audition-panel p {
       margin: 0;
+      color: #26384e;
+      font-weight: 800;
     }
 
-    .member-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .member-card {
-      display: grid;
-      grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.1fr);
-      min-height: 360px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 22px 70px rgba(18, 32, 48, 0.1);
-      overflow: hidden;
-    }
-
-    .member-visual {
-      position: relative;
-      display: grid;
-      place-items: end center;
-      padding: 28px;
-      background:
-        radial-gradient(circle at 50% 22%, rgba(255,255,255,0.8), transparent 22%),
-        linear-gradient(135deg, rgba(32,215,245,0.28), rgba(255,79,216,0.16)),
-        #eaf6fb;
-      overflow: hidden;
-    }
-
-    .member-visual::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -22px;
-      width: 170px;
-      height: 280px;
-      transform: translateX(-50%);
-      border-radius: 90px 90px 20px 20px;
-      background:
-        radial-gradient(circle at 50% 18%, rgba(17,24,39,0.86) 0 34px, transparent 35px),
-        linear-gradient(180deg, rgba(17,24,39,0.8), rgba(17,24,39,0.18));
-      box-shadow: 0 24px 70px rgba(17,24,39,0.18);
-    }
-
-    .member-card:nth-child(2) .member-visual {
-      background:
-        radial-gradient(circle at 52% 20%, rgba(255,255,255,0.85), transparent 22%),
-        linear-gradient(135deg, rgba(36,226,174,0.25), rgba(255,79,216,0.18)),
-        #f4eef9;
-    }
-
-    .member-initial {
-      position: relative;
-      z-index: 1;
-      color: rgba(255,255,255,0.9);
-      font-size: 5.4rem;
-      font-weight: 950;
-      font-style: italic;
-    }
-
-    .member-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 22px;
-      padding: 30px;
-    }
-
-    .member-role {
-      color: var(--cyan);
-      font-size: 0.72rem;
-      font-weight: 950;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .member-name {
-      margin: 10px 0 12px;
-      font-size: clamp(1.7rem, 3vw, 2.7rem);
-      line-height: 1.1;
-      font-weight: 950;
-    }
-
-    .member-copy {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.9;
-    }
-
-    .member-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .member-link {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 0 12px;
-      border: 1px solid rgba(10,24,38,0.12);
-      background: #fff;
-      color: #334155;
-      font-size: 0.68rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .business-grid,
+    /* ========================================
+      NEWS
+      ニュースを増やす場合は .news-card を追加
+    ========================================= */
     .news-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 20px;
     }
 
-    .business-card,
     .news-card {
-      border: 1px solid var(--line);
+      overflow: hidden;
       background: rgba(255, 255, 255, 0.86);
-      box-shadow: 0 18px 52px rgba(18, 32, 48, 0.08);
-    }
-
-    .business-card {
-      padding: 28px;
-    }
-
-    .card-num {
-      color: var(--pink);
-      font-size: 0.74rem;
-      font-weight: 950;
-      letter-spacing: 0.24em;
-    }
-
-    .business-card h3 {
-      margin: 22px 0 14px;
-      font-size: 1.2rem;
-      line-height: 1.45;
-    }
-
-    .business-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .audition-panel {
-      padding: clamp(30px, 5vw, 58px);
-      border: 1px solid rgba(32,215,245,0.35);
-      background:
-        linear-gradient(135deg, rgba(32,215,245,0.18), transparent 38%),
-        linear-gradient(315deg, rgba(255,79,216,0.14), transparent 44%),
-        rgba(255,255,255,0.9);
-      box-shadow: 0 28px 90px rgba(18,32,48,0.14);
-    }
-
-    .link-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 260px;
-      padding: 30px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.82);
-      color: var(--text);
-      box-shadow: 0 18px 52px rgba(18,32,48,0.08);
-    }
-
-    .link-card-audition { border-top: 5px solid var(--cyan); }
-    .link-card-business { border-top: 5px solid var(--pink); }
-
-    .audition-cta {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 28px;
-      min-height: 150px;
-      padding: clamp(26px, 4vw, 42px);
-    }
-
-    .link-card-label {
-      color: var(--cyan);
-      font-size: 0.72rem;
-      font-weight: 950;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .link-card-business .link-card-label { color: var(--pink); }
-
-    .link-card h3 {
-      margin: 12px 0 14px;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      font-weight: 900;
-    }
-
-    .audition-cta h3 {
-      max-width: 720px;
-      margin: 0;
-      font-size: clamp(1.05rem, 1.7vw, 1.28rem);
-      line-height: 1.8;
-      letter-spacing: 0.04em;
-    }
-
-    .audition-cta p {
-      max-width: 720px;
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-      font-weight: 700;
-      line-height: 1.8;
-      letter-spacing: 0.04em;
-    }
-
-    .audition-cta span {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 20px;
-      color: #031014;
-      background: linear-gradient(135deg, var(--green), var(--cyan) 55%, var(--pink));
-      box-shadow: 0 14px 36px rgba(32, 215, 245, 0.22);
-      white-space: nowrap;
-      font-size: 0.86rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-    }
-
-    .link-card-business h3 {
-      white-space: nowrap;
-      font-size: clamp(1.7rem, 4vw, 3.2rem);
-      line-height: 1;
-      font-style: italic;
-      text-transform: uppercase;
-    }
-
-    .link-card span {
-      color: var(--muted);
-      font-size: 0.86rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      border: 1px solid rgba(16, 24, 39, 0.12);
+      box-shadow: var(--shadow);
     }
 
     .news-thumb {
-      aspect-ratio: 16 / 9;
+      min-height: 150px;
       display: grid;
       place-items: center;
-      background:
-        linear-gradient(135deg, rgba(32,215,245,0.2), rgba(255,79,216,0.14)),
-        #edf4fb;
-      border-bottom: 1px solid var(--line);
-      color: rgba(17,24,39,0.22);
-      font-size: 2rem;
+      color: rgba(16, 24, 39, 0.32);
+      font-size: 0.75rem;
       font-weight: 950;
-      font-style: italic;
-      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background:
+        linear-gradient(135deg, rgba(19, 200, 232, 0.18), rgba(240, 90, 223, 0.16)),
+        rgba(255, 255, 255, 0.86);
     }
 
-    .news-body { padding: 22px; }
+    .news-body {
+      padding: 22px;
+    }
 
-    .meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
+    .news-date {
       color: var(--cyan);
-      font-size: 0.72rem;
-      font-weight: 900;
+      font-size: 0.75rem;
+      font-weight: 950;
       letter-spacing: 0.08em;
     }
 
-    .tag { color: var(--muted); }
-
-    .news-card h3 {
-      min-height: 4.8em;
-      margin: 18px 0 0;
+    .news-body h3 {
+      margin: 12px 0 0;
       font-size: 1rem;
-      line-height: 1.6;
-      letter-spacing: 0.03em;
+      line-height: 1.8;
     }
 
-    .footer {
-      padding: 56px 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
+    /* ========================================
+      BUSINESS INQUIRY
+      企業向け問い合わせ導線
+    ========================================= */
+    .business-inquiry {
+      padding: 38px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(240, 90, 223, 0.35);
+      border-top: 5px solid rgba(240, 90, 223, 0.8);
+      box-shadow: var(--shadow);
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: center;
+    .business-inquiry h3 {
+      margin: 12px 0 14px;
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      line-height: 0.92;
+      font-weight: 950;
+      font-style: italic;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .business-inquiry p {
+      max-width: 720px;
+      margin: 0 0 28px;
+      color: #26384e;
+      font-weight: 800;
+    }
+
+    /* ========================================
+      フッター
+    ========================================= */
+    footer {
+      padding: 42px 0 54px;
+      color: #627286;
       font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
     }
 
-    @media (max-width: 900px) {
-      .nav a:not(.btn) { display: none; }
-      .section-head { display: block; }
-      .section-copy { margin-top: 18px; }
-      .member-grid, .business-grid, .news-grid { grid-template-columns: 1fr; }
-      .member-card { grid-template-columns: 1fr; }
-      .member-visual { min-height: 280px; }
-      .audition-cta { grid-template-columns: 1fr; gap: 20px; }
+    /* ========================================
+      スマホ調整
+    ========================================= */
+    @media (max-width: 860px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .nav {
+        gap: 12px;
+      }
+
+      .nav a:not(.btn) {
+        display: none;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 74px 0;
+      }
+
+      .talent-grid,
+      .business-grid,
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .audition-panel {
+        grid-template-columns: 1fr;
+        padding: 26px;
+      }
+
+      .business-inquiry {
+        padding: 28px;
+      }
+
+      .business-inquiry h3 {
+        white-space: normal;
+      }
     }
 
-    @media (max-width: 560px) {
-      .container { width: min(var(--max), calc(100% - 28px)); }
-      .site-header { padding: 10px 0; }
-      .header-inner { min-height: 58px; padding: 0 12px 0 14px; }
-      .brand-name { font-size: 1.35rem; }
-      .brand-mark { width: 32px; height: 32px; }
-      .nav .btn { min-height: 40px; padding: 0 14px; font-size: 0.68rem; }
-      .hero { min-height: auto; padding-top: 116px; }
-      .hero-title { font-size: clamp(3rem, 15vw, 5rem); }
-      .section { padding: 72px 0; }
-      .news-card h3 { min-height: auto; }
-      .footer-inner { display: block; }
-      .footer-inner p { margin-top: 12px; }
+    @media (max-width: 520px) {
+      .header-inner {
+        min-height: 58px;
+        padding: 9px 12px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .brand-name {
+        font-size: 1.16rem;
+      }
+
+      .btn {
+        min-height: 42px;
+        padding: 0 16px;
+      }
+
+      .hero-title {
+        font-size: clamp(3.1rem, 17vw, 5rem);
+      }
     }
   </style>
 </head>
 
 <body>
+  <!-- ========================================
+    HEADER
+  ========================================= -->
   <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
-        <a class="brand" href="#">
-          <img src="./icon_nocta_cropped.png" alt="" class="brand-mark" />
-          <span class="brand-name">Nocta Studio</span>
-        </a>
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <img src="./icon_nocta_cropped.png" alt="" class="brand-mark">
+        <span class="brand-name">Nocta Studio</span>
+      </a>
 
-        <nav class="nav" aria-label="Main navigation">
-          <a href="#talents">Talents</a>
-          <a href="#business">Business</a>
-          <a href="#audition">Audition</a>
-          <a href="#news">News</a>
-          <a class="btn btn-primary" href="./audition.html">Entry</a>
-        </nav>
-      </div>
+      <nav class="nav">
+        <a href="#talents">Talents</a>
+        <a href="#business">Business</a>
+        <a href="#audition">Audition</a>
+        <a href="#news">News</a>
+        <a class="btn btn-primary" href="./audition.html">Entry</a>
+      </nav>
     </div>
   </header>
 
+  <!-- ========================================
+    HERO
+  ========================================= -->
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Next Generation Streamer Production</div>
-          <h1 class="hero-title">Beyond<br><span>The Screen</span></h1>
-          <p class="hero-copy">
-            ストリーマー・VTuberの配信活動を包括的に支える、配信者事務所兼エージェンシー。
-          </p>
+      <div class="container hero-inner">
+        <div class="eyebrow">Next Generation Streamer Production</div>
+        <h1 class="hero-title">
+          Beyond
+          <span>The Screen</span>
+        </h1>
+        <p class="hero-copy">
+          ストリーマー・VTuberの配信活動を包括的に支える、配信者事務所兼エージェンシー。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="./audition.html">応募フォームへ</a>
+          <a class="btn" href="#business-contact">企業の方はこちら</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="talents">
+    <!-- ========================================
+      TALENTS
+    ========================================= -->
+    <section id="talents" class="section">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="eyebrow">Current Roster</div>
-            <h2 class="section-title">Talents</h2>
+            <div class="eyebrow">Talents</div>
+            <h2 class="section-title">Creator Lineup</h2>
           </div>
-          <p class="section-copy">
-            Nocta Studioに参加するストリーマー・VTuber。配信、企画、案件展開まで、それぞれの個性に合わせて活動を広げていきます。
+          <p class="section-lead">
+            Nocta Studioで活動するストリーマー・VTuberを紹介します。
           </p>
         </div>
 
-        <div class="member-grid">
-          <article class="member-card">
-            <div class="member-visual">
-              <div class="member-initial">01</div>
-            </div>
-            <div class="member-body">
-              <div>
-                <div class="member-role">Streamer / Creator</div>
-                <h3 class="member-name">Talent Name</h3>
-                <p class="member-copy">
-                  ここにタレントの紹介文を入れます。配信ジャンル、得意な企画、活動の雰囲気が短く伝わると強いです。
-                </p>
-              </div>
-              <div class="member-links">
-                <a class="member-link" href="#">YouTube</a>
-                <a class="member-link" href="#">X / Twitter</a>
-                <a class="member-link" href="#">Profile</a>
-              </div>
-            </div>
+        <div class="talent-grid">
+          <article class="talent-card">
+            <div class="talent-status">Coming Soon</div>
+            <h3 class="talent-name">Talent 01</h3>
+            <p>所属タレント情報は順次公開予定です。</p>
           </article>
 
-          <article class="member-card">
-            <div class="member-visual">
-              <div class="member-initial">02</div>
-            </div>
-            <div class="member-body">
-              <div>
-                <div class="member-role">VTuber / Streamer</div>
-                <h3 class="member-name">Talent Name</h3>
-                <p class="member-copy">
-                  ここにタレントの紹介文を入れます。キャラクター性、配信スタイル、ファンに届けたい世界観を置けます。
-                </p>
-              </div>
-              <div class="member-links">
-                <a class="member-link" href="#">YouTube</a>
-                <a class="member-link" href="#">X / Twitter</a>
-                <a class="member-link" href="#">Profile</a>
-              </div>
-            </div>
+          <article class="talent-card">
+            <div class="talent-status">Coming Soon</div>
+            <h3 class="talent-name">Talent 02</h3>
+            <p>所属タレント情報は順次公開予定です。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="business">
+    <!-- ========================================
+      BUSINESS
+    ========================================= -->
+    <section id="business" class="section">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="eyebrow">What We Do</div>
-            <h2 class="section-title">Business</h2>
+            <div class="eyebrow">Business</div>
+            <h2 class="section-title">Support</h2>
           </div>
-          <p class="section-copy">
-            配信活動を継続して伸ばしていくために、活動設計から日々の運営、外部展開まで幅広く伴走します。
+          <p class="section-lead">
+            配信活動の運営、成長、外部展開まで、活動状況に合わせて包括的にサポートします。
           </p>
         </div>
 
         <div class="business-grid">
           <article class="business-card">
-            <div class="card-num">01 / DIRECTION</div>
-            <h3>活動方針の設計</h3>
-            <p>
-              配信ジャンル、キャラクター性、SNSでの見せ方を整理し、無理なく続けられる活動方針を一緒につくります。
-            </p>
+            <div class="business-number">01</div>
+            <h3>活動サポート</h3>
+            <p>配信方針、活動設計、環境づくりなど、継続して活動するための土台を一緒に整えます。</p>
           </article>
 
           <article class="business-card">
-            <div class="card-num">02 / STREAM</div>
-            <h3>配信活動サポート</h3>
-            <p>
-              配信内容の相談、企画づくり、素材まわり、活動スケジュールなど、日々の配信運営を包括的に支援します。
-            </p>
+            <div class="business-number">02</div>
+            <h3>企画・展開</h3>
+            <p>配信企画、イベント、コラボレーションなど、活動の幅を広げるための展開を支援します。</p>
           </article>
 
           <article class="business-card">
-            <div class="card-num">03 / AGENCY</div>
-            <h3>エージェンシー支援</h3>
-            <p>
-              企業案件、イベント出演、タイアップ、各種展開の相談まで、活動の幅を広げるための窓口として支援します。
-            </p>
+            <div class="business-number">03</div>
+            <h3>企業案件</h3>
+            <p>タイアップ、出演、プロモーションなど、企業とのやり取りや条件整理をサポートします。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section audition" id="audition">
+    <!-- ========================================
+      AUDITION
+    ========================================= -->
+    <section id="audition" class="section">
       <div class="container">
         <div class="audition-panel">
-          <div class="section-head">
-            <div>
-              <div class="eyebrow">Talent Entry</div>
-              <h2 class="section-title">Audition</h2>
-            </div>
-            <p class="section-copy">
-              ストリーマー・VTuberとしてNocta Studioで活動したい方を募集しています。
+          <div>
+            <div class="eyebrow">Talent Entry</div>
+            <h3>Audition</h3>
+            <p>
+              Nocta Studioでは、共に活動するストリーマー・VTuberを募集しています。
             </p>
           </div>
-
-          <div class="link-card-grid">
-            <a class="link-card link-card-audition audition-cta" href="./audition.html">
-              <div>
-                <div class="link-card-label">Audition Page</div>
-                <h3>Nocta Studioでは、所属ストリーマー・VTuberを募集しています。</h3>
-                <p>応募条件や選考フローをご確認のうえ、エントリーへお進みください。</p>
-              </div>
-              <span>募集要項を見る</span>
-            </a>
-          </div>
+          <a class="btn btn-primary" href="./audition.html">応募ページへ</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="news">
+    <!-- ========================================
+      NEWS
+    ========================================= -->
+    <section id="news" class="section">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="eyebrow">Activity Log</div>
-            <h2 class="section-title">News</h2>
+            <div class="eyebrow">News</div>
+            <h2 class="section-title">Latest</h2>
           </div>
-          <p class="section-copy">
-            最新情報や活動実績をまとめて掲載します。所属タレントの発表、イベント、案件実績などをここに置けます。
+          <p class="section-lead">
+            Nocta Studioからのお知らせを掲載します。
           </p>
         </div>
 
         <div class="news-grid">
           <article class="news-card">
-            <div class="news-thumb">Launch</div>
+            <div class="news-thumb">NO IMAGE</div>
             <div class="news-body">
-              <div class="meta">
-                <time datetime="2026-07-01">2026.07.01</time>
-                <span class="tag">#NEWS</span>
-              </div>
-              <h3>Nocta Studio 1期生プロジェクトのエントリー受付を開始しました。</h3>
+              <div class="news-date">2026.07.05</div>
+              <h3>Nocta Studio公式サイトを公開しました。</h3>
             </div>
           </article>
 
           <article class="news-card">
-            <div class="news-thumb">Event</div>
+            <div class="news-thumb">NO IMAGE</div>
             <div class="news-body">
-              <div class="meta">
-                <time datetime="2026-06-20">2026.06.20</time>
-                <span class="tag">#EVENT</span>
-              </div>
-              <h3>配信者向けの企画制作・案件進行サポート体制を強化しました。</h3>
+              <div class="news-date">2026.07.05</div>
+              <h3>所属希望者向けオーディションページを公開しました。</h3>
             </div>
           </article>
 
           <article class="news-card">
-            <div class="news-thumb">Works</div>
+            <div class="news-thumb">NO IMAGE</div>
             <div class="news-body">
-              <div class="meta">
-                <time datetime="2026-06-08">2026.06.08</time>
-                <span class="tag">#WORKS</span>
-              </div>
-              <h3>ブランドタイアップ、イベント出演、グッズ展開の相談受付を開始しました。</h3>
+              <div class="news-date">2026.07.05</div>
+              <h3>企業向けお問い合わせ窓口を公開しました。</h3>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="business-contact">
+    <!-- ========================================
+      BUSINESS CONTACT
+    ========================================= -->
+    <section id="business-contact" class="section">
       <div class="container">
-        <a class="link-card link-card-business" href="./business-inquiry.html">
-          <div>
-            <div class="link-card-label">Company Contact</div>
-            <h3>Business Inquiry</h3>
-            <p>
-              企業案件、タイアップ、イベント出演、プロモーションなど、配信者起用を相談したい企業向けの窓口です。
-            </p>
-          </div>
-          <span>Open Contact Form</span>
-        </a>
+        <div class="business-inquiry">
+          <div class="eyebrow">Company Contact</div>
+          <h3>Business Inquiry</h3>
+          <p>
+            企業案件、タイアップ、イベント出演、プロモーションなど、配信者起用に関するご相談はこちらからお問い合わせください。
+          </p>
+          <a class="btn" href="./business-inquiry.html">企業向けフォームへ</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <strong>Nocta Studio</strong>
-      <p>Operated by GlowEngine LLC. © 2026 All Rights Reserved.</p>
+  <!-- ========================================
+    FOOTER
+  ========================================= -->
+  <footer>
+    <div class="container">
+      &copy; 2026 Nocta Studio / GlowEngine LLC. All Rights Reserved.
     </div>
   </footer>
 </body>
