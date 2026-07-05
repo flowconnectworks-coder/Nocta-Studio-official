@@ -16,7 +16,6 @@
   <style>
     /* ========================================
       BASIC COLORS
-      サイト全体の色を変えたい場合はここ
     ========================================= */
     :root {
       --bg: #f6f8fb;
@@ -72,7 +71,6 @@
 
     /* ========================================
       COMMON PARTS
-      小さい英字ラベル、セクション見出し
     ========================================= */
     .eyebrow {
       display: inline-flex;
@@ -95,39 +93,26 @@
     }
 
     .section {
-      padding: 104px 0;
+      padding: 112px 0;
       border-top: 1px solid rgba(10, 24, 38, 0.08);
     }
 
     .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 32px;
-      margin-bottom: 34px;
+      margin-bottom: 42px;
     }
 
     .section-title {
       margin: 8px 0 0;
-      font-size: clamp(2rem, 5vw, 4.8rem);
-      line-height: 0.95;
+      font-size: clamp(2.8rem, 7vw, 6.2rem);
+      line-height: 0.9;
       letter-spacing: 0;
       text-transform: uppercase;
       font-weight: 950;
       font-style: italic;
     }
 
-    .section-copy {
-      max-width: 420px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin: 0;
-    }
-
     /* ========================================
       HEADER
-      事務所名の文字を変えたい場合は .brand-name
-      アイコン画像は icon_nocta_cropped.png
     ========================================= */
     .site-header {
       position: fixed;
@@ -217,28 +202,27 @@
 
     /* ========================================
       HERO
-      メインコピーを変えたい場合は h1 と .hero-copy
     ========================================= */
     .hero {
-      min-height: 100vh;
+      min-height: 82vh;
       display: grid;
       align-items: center;
-      padding: 140px 0 96px;
+      padding: 116px 0 74px;
       position: relative;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 920px);
-      gap: 28px;
+      grid-template-columns: minmax(0, 980px);
       align-items: center;
       justify-content: center;
+      transform: translateY(-12px);
     }
 
     .hero-title {
-      margin: 16px 0 26px;
-      font-size: clamp(4.2rem, 9vw, 8.8rem);
-      line-height: 0.88;
+      margin: 16px 0 28px;
+      font-size: clamp(5rem, 10.2vw, 10rem);
+      line-height: 0.86;
       letter-spacing: 0;
       font-weight: 950;
       text-transform: uppercase;
@@ -248,28 +232,21 @@
     .hero-title span {
       display: block;
       color: transparent;
-      -webkit-text-stroke: 1.4px rgba(17,24,39,0.62);
+      -webkit-text-stroke: 1.5px rgba(17,24,39,0.62);
       text-shadow: none;
     }
 
     .hero-copy {
-      max-width: 880px;
-      margin: 0 0 34px;
+      max-width: 900px;
+      margin: 0;
       color: #445266;
-      font-size: clamp(1rem, 1.55vw, 1.16rem);
+      font-size: clamp(1.05rem, 1.65vw, 1.24rem);
       font-weight: 700;
       letter-spacing: 0.06em;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
     /* ========================================
       TALENTS
-      所属タレントを追加する場合は member-card を増やす
     ========================================= */
     .member-grid {
       display: grid;
@@ -492,11 +469,15 @@
     }
 
     .audition-cta h3 {
-      max-width: 720px;
+      max-width: 900px;
       margin: 10px 0 0;
-      font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+      font-size: clamp(1.05rem, 1.55vw, 1.22rem);
       line-height: 1.8;
       letter-spacing: 0.04em;
+    }
+
+    .keep-line {
+      white-space: nowrap;
     }
 
     .audition-cta p {
@@ -509,7 +490,7 @@
       letter-spacing: 0.04em;
     }
 
-    .audition-cta span {
+    .audition-cta span.cta-text {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -527,7 +508,6 @@
 
     /* ========================================
       NEWS
-      見出しは Activity Log / News のまま
     ========================================= */
     .news-grid {
       display: grid;
@@ -613,20 +593,26 @@
       FOOTER
     ========================================= */
     .footer {
-      padding: 56px 0;
+      padding: 46px 0;
       border-top: 1px solid var(--line);
       color: var(--muted);
+      text-align: center;
     }
 
     .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: center;
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+    }
+
+    .footer a {
+      color: var(--text);
+      border-bottom: 1px solid rgba(32, 215, 245, 0.65);
+    }
+
+    .footer a:hover {
+      color: var(--cyan);
     }
 
     /* ========================================
@@ -648,20 +634,16 @@
       .member-visual {
         min-height: 280px;
       }
-
-      .section-head {
-        display: block;
-      }
-
-      .section-copy {
-        margin-top: 18px;
-      }
     }
 
     @media (max-width: 760px) {
       .audition-cta {
         grid-template-columns: 1fr;
         gap: 20px;
+      }
+
+      .keep-line {
+        white-space: normal;
       }
     }
 
@@ -672,13 +654,13 @@
       .brand-mark { width: 34px; height: 34px; }
       .brand-name { font-size: 1.18rem; }
       .nav .btn { min-height: 40px; padding: 0 14px; font-size: 0.68rem; }
-      .hero { min-height: auto; padding-top: 116px; }
-      .hero-title { font-size: clamp(3rem, 19vw, 5.3rem); }
-      .section { padding: 72px 0; }
+      .hero { min-height: auto; padding-top: 112px; }
+      .hero-grid { transform: none; }
+      .hero-title { font-size: clamp(3.5rem, 19vw, 5.8rem); }
+      .section { padding: 76px 0; }
+      .section-title { font-size: clamp(2.5rem, 15vw, 4.5rem); }
       .news-card h3 { min-height: auto; }
       .link-card-business h3 { white-space: normal; }
-      .footer-inner { display: block; }
-      .footer-inner p { margin-top: 12px; }
     }
   </style>
 </head>
@@ -735,9 +717,6 @@
             <div class="eyebrow">Current Roster</div>
             <h2 class="section-title">Talents</h2>
           </div>
-          <p class="section-copy">
-            Nocta Studioに参加するストリーマー・VTuber。配信、企画、案件展開まで、それぞれの個性に合わせて活動を広げていきます。
-          </p>
         </div>
 
         <div class="member-grid">
@@ -794,9 +773,6 @@
             <div class="eyebrow">What We Do</div>
             <h2 class="section-title">Business</h2>
           </div>
-          <p class="section-copy">
-            配信活動を継続して伸ばしていくために、活動設計から日々の運営、外部展開まで幅広く伴走します。
-          </p>
         </div>
 
         <div class="business-grid">
@@ -832,19 +808,16 @@
               <div class="eyebrow">Talent Entry</div>
               <h2 class="section-title">Audition</h2>
             </div>
-            <p class="section-copy">
-              ストリーマー・VTuberとしてNocta Studioで活動したい方を募集しています。
-            </p>
           </div>
 
           <div class="link-card-grid">
             <a class="link-card link-card-audition audition-main-card audition-cta" href="audition.html">
               <div>
                 <div class="link-card-label">Audition Page</div>
-                <h3>Nocta Studioでは、共に活動するストリーマー・VTuberを募集しています。</h3>
+                <h3><span class="keep-line">Nocta Studioでは、共に活動するストリーマー・VTuberを募集しています。</span></h3>
                 <p>応募条件や選考フローをご確認のうえ、エントリーへお進みください。</p>
               </div>
-              <span>募集要項を見る</span>
+              <span class="cta-text">募集要項を見る</span>
             </a>
           </div>
         </div>
@@ -861,9 +834,6 @@
             <div class="eyebrow">Activity Log</div>
             <h2 class="section-title">News</h2>
           </div>
-          <p class="section-copy">
-            最新情報や活動実績をまとめて掲載します。所属タレントの発表、イベント、案件実績などをここに置けます。
-          </p>
         </div>
 
         <div class="news-grid">
@@ -927,8 +897,7 @@
   ========================================= -->
   <footer class="footer">
     <div class="container footer-inner">
-      <strong>Nocta Studio</strong>
-      <p>Operated by GlowEngine LLC. © 2026 All Rights Reserved.</p>
+      Operated by <a href="https://glowengine-llc.com/" target="_blank" rel="noopener">GlowEngine LLC.</a> © 2026 All Rights Reserved.
     </div>
   </footer>
 </body>
