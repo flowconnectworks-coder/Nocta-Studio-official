@@ -202,7 +202,7 @@
 
     /* ========================================
       HERO
-      トップの大きい文字バランスはここ
+      左基準 + THE SCREENだけ右にずらして重心調整
     ========================================= */
     .hero {
       min-height: 82vh;
@@ -214,19 +214,15 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1080px);
+      grid-template-columns: minmax(0, 980px);
       align-items: center;
       justify-content: center;
-      text-align: center;
+      text-align: left;
       transform: translateY(-12px);
     }
 
-    .hero .eyebrow {
-      justify-content: center;
-    }
-
     .hero-title {
-      margin: 16px auto 28px;
+      margin: 16px 0 28px;
       font-size: clamp(5rem, 10.2vw, 10rem);
       line-height: 0.86;
       letter-spacing: 0;
@@ -240,11 +236,12 @@
       color: transparent;
       -webkit-text-stroke: 1.5px rgba(17,24,39,0.62);
       text-shadow: none;
+      transform: translateX(clamp(34px, 5vw, 86px));
     }
 
     .hero-copy {
       max-width: 900px;
-      margin: 0 auto;
+      margin: 0;
       color: #445266;
       font-size: clamp(1.05rem, 1.65vw, 1.24rem);
       font-weight: 700;
@@ -663,6 +660,7 @@
       .hero { min-height: auto; padding-top: 112px; }
       .hero-grid { transform: none; }
       .hero-title { font-size: clamp(3.5rem, 19vw, 5.8rem); }
+      .hero-title span { transform: translateX(0); }
       .section { padding: 76px 0; }
       .section-title { font-size: clamp(2.5rem, 15vw, 4.5rem); }
       .news-card h3 { min-height: auto; }
