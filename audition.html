@@ -1,58 +1,49 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nocta Studio Audition</title>
 
   <!-- ========================================
-    フォント設定
+    FONT
+    ヘッダーの事務所名フォント：Russo One
   ========================================= -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Noto+Sans+JP:wght@500;700;900&family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 
   <style>
     /* ========================================
-      基本カラー
+      BASIC COLORS
     ========================================= */
     :root {
-      --bg: #f7fbff;
-      --text: #101827;
-      --muted: #506176;
-      --line: rgba(16, 24, 39, 0.12);
-      --cyan: #13c8e8;
-      --green: #28e0ad;
-      --pink: #f05adf;
-      --white: #ffffff;
-      --shadow: 0 24px 80px rgba(30, 80, 120, 0.12);
-      --gradient: linear-gradient(135deg, #27e0b9 0%, #19c7ef 52%, #f45adb 100%);
+      --bg: #f6f8fb;
+      --line: rgba(10, 24, 38, 0.12);
+      --text: #111827;
+      --muted: #617083;
+      --cyan: #20d7f5;
+      --green: #24e2ae;
+      --pink: #ff4fd8;
+      --max: 1040px;
     }
 
-    /* ========================================
-      全体設定
-    ========================================= */
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
+      font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
       color: var(--text);
-      font-family: "Inter", "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
       background:
-        linear-gradient(rgba(16, 24, 39, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(16, 24, 39, 0.045) 1px, transparent 1px),
-        radial-gradient(circle at 0% 10%, rgba(19, 200, 232, 0.2), transparent 32%),
-        radial-gradient(circle at 100% 18%, rgba(240, 90, 223, 0.18), transparent 34%),
-        #f7fbff;
+        linear-gradient(rgba(8, 24, 38, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(8, 24, 38, 0.035) 1px, transparent 1px),
+        radial-gradient(circle at 12% 8%, rgba(32, 215, 245, 0.2), transparent 28%),
+        radial-gradient(circle at 88% 12%, rgba(255, 79, 216, 0.14), transparent 26%),
+        #f6f8fb;
       background-size: 48px 48px, 48px 48px, auto, auto, auto;
       line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     a {
@@ -60,85 +51,50 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     .container {
-      width: min(1120px, calc(100% - 40px));
+      width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
     }
 
-    .section {
-      padding: 86px 0;
-      border-top: 1px solid rgba(16, 24, 39, 0.08);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #02bfe5;
-      font-size: 0.78rem;
-      font-weight: 900;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--green);
-      box-shadow: 0 0 18px rgba(40, 224, 173, 0.6);
-    }
-
     /* ========================================
-      ヘッダー
-      ロゴ画像は icon_nocta_cropped.png
-      事務所名フォントは .brand-name で変更
+      HEADER
     ========================================= */
-    .site-header {
+    header {
+      padding: 18px 0;
       position: sticky;
       top: 0;
-      z-index: 20;
-      padding: 18px 0;
-      background: rgba(247, 251, 255, 0.78);
+      z-index: 10;
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(16, 24, 39, 0.08);
     }
 
     .header-inner {
-      min-height: 64px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      padding: 10px 16px;
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid rgba(16, 24, 39, 0.08);
-      box-shadow: 0 18px 60px rgba(30, 80, 120, 0.1);
+      align-items: center;
+      min-height: 64px;
+      padding: 0 22px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 60px rgba(18, 32, 48, 0.12);
     }
 
     .brand {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 12px;
-      min-width: 0;
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
+      display: block;
+      width: 36px;
+      height: 36px;
       object-fit: contain;
       flex: 0 0 auto;
     }
 
     .brand-name {
-      font-family: "Russo One", "Inter", sans-serif;
-      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      font-family: "Russo One", "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(1.35rem, 2vw, 1.75rem);
       font-weight: 400;
       line-height: 1;
       letter-spacing: 0.01em;
@@ -147,252 +103,232 @@
 
     .nav {
       display: flex;
+      gap: 24px;
       align-items: center;
-      gap: 22px;
-      font-size: 0.78rem;
+      color: #667386;
+      font-size: 0.72rem;
       font-weight: 900;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #5c6b7d;
-    }
-
-    .nav a:hover {
-      color: var(--text);
     }
 
     /* ========================================
-      ボタン
+      BUTTON
     ========================================= */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 46px;
-      padding: 0 24px;
-      border: 1px solid rgba(16, 24, 39, 0.16);
-      font-size: 0.78rem;
+      padding: 0 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.78);
+      color: var(--text);
+      font-size: 0.76rem;
       font-weight: 950;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      background: rgba(255, 255, 255, 0.72);
-      box-shadow: 0 18px 42px rgba(30, 80, 120, 0.08);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(32, 215, 245, 0.8);
+      background: rgba(32, 215, 245, 0.1);
     }
 
     .btn-primary {
       border: 0;
-      color: #07101d;
-      background: var(--gradient);
-      box-shadow: 0 20px 54px rgba(19, 200, 232, 0.22);
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
+      color: #031014;
+      background: linear-gradient(135deg, var(--green), var(--cyan) 55%, var(--pink));
+      box-shadow: 0 18px 44px rgba(32, 215, 245, 0.22);
     }
 
     /* ========================================
-      HERO
-      タイトルは2行
-      Nocta Studio
-      Audition
+      COMMON PARTS
     ========================================= */
-    .hero {
-      padding: 96px 0 74px;
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--cyan);
+      font-size: 0.72rem;
+      font-weight: 950;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 0.78fr;
-      gap: 54px;
-      align-items: end;
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 18px rgba(36, 226, 174, 0.6);
     }
 
-    h1 {
-      margin: 18px 0 24px;
-      font-size: clamp(3.4rem, 8vw, 7.4rem);
-      line-height: 0.92;
+    section {
+      padding: 72px 0;
+      border-top: 1px solid rgba(10, 24, 38, 0.08);
+    }
+
+    .section-title {
+      margin: 8px 0 28px;
+      font-size: clamp(2rem, 5vw, 4.6rem);
+      line-height: 0.95;
       font-weight: 950;
       font-style: italic;
       text-transform: uppercase;
     }
 
-    h1 span {
-      display: block;
-      white-space: nowrap;
-    }
-
-    .hero-copy {
-      margin: 0;
-      color: #26384e;
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      font-weight: 900;
-      line-height: 2;
-    }
-
-    .hero-note {
-      padding: 28px;
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid rgba(16, 24, 39, 0.12);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-note p {
-      margin: 0;
-      color: #26384e;
-      font-weight: 800;
-    }
-
-    /* ========================================
-      応募フォーム導線
-      URLを変える場合は HTML の href を変更
-    ========================================= */
-    .entry-panel {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 30px;
-      align-items: center;
-      padding: 36px;
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid rgba(19, 200, 232, 0.45);
-      border-top: 5px solid rgba(19, 200, 232, 0.75);
-      box-shadow: var(--shadow);
-    }
-
-    .entry-panel h2 {
-      margin: 12px 0;
-      font-size: clamp(2rem, 4.8vw, 4.4rem);
-      line-height: 0.98;
-      font-weight: 950;
-      font-style: italic;
-      text-transform: uppercase;
-    }
-
-    .entry-panel p {
-      margin: 0;
-      color: #26384e;
-      font-weight: 800;
-    }
-
-    /* ========================================
-      FLOW
-    ========================================= */
-    .flow-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .flow-item {
-      display: grid;
-      grid-template-columns: 64px 1fr;
-      gap: 20px;
-      align-items: center;
-      padding: 22px;
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid rgba(16, 24, 39, 0.12);
-      box-shadow: 0 16px 48px rgba(30, 80, 120, 0.08);
-    }
-
-    .flow-num {
-      display: grid;
-      place-items: center;
-      width: 50px;
-      height: 50px;
-      background: var(--cyan);
-      color: #07101d;
-      font-size: 0.8rem;
-      font-weight: 950;
-    }
-
-    .flow-item h3 {
-      margin: 0 0 4px;
-      font-size: 1.05rem;
-    }
-
-    .flow-item p {
-      margin: 0;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    /* ========================================
-      FAQ
-    ========================================= */
-    .faq-grid {
+    .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
 
-    .faq-card {
-      padding: 26px;
-      min-height: 150px;
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid rgba(16, 24, 39, 0.12);
-      box-shadow: 0 16px 48px rgba(30, 80, 120, 0.08);
+    .card {
+      padding: 28px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 18px 52px rgba(18, 32, 48, 0.08);
     }
 
-    .faq-card h3 {
-      margin: 0 0 12px;
-      font-size: 1rem;
+    .card b {
+      color: var(--cyan);
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      margin: 12px 0;
+      font-size: 1.2rem;
       line-height: 1.6;
     }
 
-    .faq-card p {
+    .card p {
       margin: 0;
       color: var(--muted);
-      font-weight: 700;
+      font-weight: 650;
     }
 
     /* ========================================
-      フッター
+      HERO
+      大きい NOCTA STUDIO AUDITION は削除
+      小さい AUDITION ラベル＋説明文だけ
+    ========================================= */
+    .hero {
+      padding: 96px 0 72px;
+      border-top: 0;
+    }
+
+    .hero-box {
+      max-width: 860px;
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px solid rgba(32, 215, 245, 0.32);
+      border-top: 5px solid var(--cyan);
+      background:
+        linear-gradient(135deg, rgba(32,215,245,0.16), transparent 38%),
+        linear-gradient(315deg, rgba(255,79,216,0.12), transparent 44%),
+        rgba(255,255,255,0.9);
+      box-shadow: 0 24px 80px rgba(18, 32, 48, 0.12);
+    }
+
+    .hero-title {
+      margin: 14px 0 18px;
+      font-size: clamp(1.65rem, 3.4vw, 2.8rem);
+      line-height: 1.35;
+      font-weight: 950;
+      letter-spacing: 0.02em;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 0 0 30px;
+      color: #445266;
+      font-size: 1.04rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    /* ========================================
+      FLOW
+    ========================================= */
+    .flow {
+      display: grid;
+      gap: 12px;
+    }
+
+    .flow-row {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 14px 42px rgba(18, 32, 48, 0.06);
+    }
+
+    .flow-row b {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      background: var(--cyan);
+      color: #061015;
+      font-size: 0.78rem;
+      font-weight: 950;
+    }
+
+    .flow-row strong {
+      color: var(--text);
+    }
+
+    .flow-row span {
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    /* ========================================
+      FOOTER
     ========================================= */
     footer {
-      padding: 42px 0 54px;
-      color: #627286;
+      padding: 48px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
       font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
-      text-align: center;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     /* ========================================
-      スマホ調整
+      RESPONSIVE
     ========================================= */
-    @media (max-width: 860px) {
+    @media (max-width: 760px) {
       .container {
-        width: min(100% - 28px, 1120px);
-      }
-
-      .nav {
-        gap: 12px;
+        width: min(var(--max), calc(100% - 28px));
       }
 
       .nav a:not(.btn) {
         display: none;
       }
 
-      .hero {
-        padding: 74px 0 58px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .entry-panel {
-        grid-template-columns: 1fr;
-        padding: 26px;
-      }
-
-      .faq-grid {
+      .grid {
         grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 520px) {
+      header {
+        padding: 10px 0;
+      }
+
       .header-inner {
         min-height: 58px;
-        padding: 9px 12px;
+        padding: 0 12px;
       }
 
       .brand-mark {
@@ -401,16 +337,21 @@
       }
 
       .brand-name {
-        font-size: 1.16rem;
+        font-size: 1.18rem;
       }
 
       .btn {
-        min-height: 42px;
-        padding: 0 16px;
+        min-height: 40px;
+        padding: 0 14px;
+        font-size: 0.68rem;
       }
 
-      h1 {
-        font-size: clamp(3rem, 15vw, 5rem);
+      .hero {
+        padding: 68px 0 56px;
+      }
+
+      section {
+        padding: 62px 0;
       }
     }
   </style>
@@ -420,15 +361,15 @@
   <!-- ========================================
     HEADER
   ========================================= -->
-  <header class="site-header">
+  <header>
     <div class="container header-inner">
-      <a class="brand" href="./index.html">
+      <a class="brand" href="index.html">
         <img src="./icon_nocta_cropped.png" alt="" class="brand-mark">
         <span class="brand-name">Nocta Studio</span>
       </a>
 
       <nav class="nav">
-        <a href="./index.html">Home</a>
+        <a href="index.html">Home</a>
         <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfN9PYLymGhIp9BRVoPd4rtpXFU39ATbPbW57Z9eUju24phLQ/viewform" target="_blank" rel="noopener">Entry</a>
       </nav>
     </div>
@@ -439,41 +380,49 @@
       HERO
     ========================================= -->
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
+      <div class="container">
+        <div class="hero-box">
           <div class="eyebrow">Audition</div>
-          <h1>
-            <span>Nocta Studio</span>
-            <span>Audition</span>
-          </h1>
-          <p class="hero-copy">
-            ストリーマー・VTuberとして継続的に活動したい方を募集しています。配信活動の運営、企画相談、外部展開まで、活動状況に合わせて包括的にサポートします。
-          </p>
-        </div>
 
-        <div class="hero-note">
-          <p>
-            応募前に、活動内容・SNS・配信ジャンル・今後やりたいことを整理しておくと、フォーム入力がスムーズです。
+          <h1 class="hero-title">
+            Nocta Studioでは、共に活動するストリーマー・VTuberを募集しています。
+          </h1>
+
+          <p class="lead">
+            配信活動の運営、企画相談、外部展開まで、活動状況に合わせて包括的にサポートします。応募内容を確認後、必要に応じてご連絡します。
           </p>
+
+          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfN9PYLymGhIp9BRVoPd4rtpXFU39ATbPbW57Z9eUju24phLQ/viewform" target="_blank" rel="noopener">
+            応募フォームへ
+          </a>
         </div>
       </div>
     </section>
 
     <!-- ========================================
-      ENTRY FORM
-      GoogleフォームURLを変える場合は href を変更
+      REQUIREMENT
     ========================================= -->
-    <section class="section">
+    <section>
       <div class="container">
-        <div class="entry-panel">
-          <div>
-            <div class="eyebrow">Entry Form</div>
-            <h2>Apply Now</h2>
+        <div class="eyebrow">Requirement</div>
+        <h2 class="section-title">Requirement</h2>
+
+        <div class="grid">
+          <article class="card">
+            <b>Target</b>
+            <h3>ストリーマー・VTuberとして活動したい方</h3>
             <p>
-              応募はGoogleフォームから受け付けています。内容を確認後、必要に応じてご連絡します。
+              配信経験の有無は問いません。活動への熱量、継続する意思、得意なジャンルや個性を重視します。
             </p>
-          </div>
-          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfN9PYLymGhIp9BRVoPd4rtpXFU39ATbPbW57Z9eUju24phLQ/viewform" target="_blank" rel="noopener">応募フォームへ</a>
+          </article>
+
+          <article class="card">
+            <b>Welcome</b>
+            <h3>すでに配信経験やSNS活動がある方</h3>
+            <p>
+              現在のアカウントや活動実績がある場合は、応募時にURLや実績をお知らせください。
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -481,73 +430,82 @@
     <!-- ========================================
       FLOW
     ========================================= -->
-    <section class="section">
+    <section>
       <div class="container">
-        <div class="eyebrow">Flow</div>
-        <div class="flow-list" style="margin-top: 28px;">
-          <article class="flow-item">
-            <div class="flow-num">01</div>
-            <div>
-              <h3>フォーム応募</h3>
-              <p>活動内容、SNS、得意ジャンル、今後の活動方針などを確認します。</p>
-            </div>
-          </article>
+        <div class="eyebrow">Screening Process</div>
+        <h2 class="section-title">Flow</h2>
 
-          <article class="flow-item">
-            <div class="flow-num">02</div>
+        <div class="flow">
+          <div class="flow-row">
+            <b>01</b>
             <div>
-              <h3>オンライン面談</h3>
-              <p>活動方針や相性をすり合わせます。</p>
+              <strong>フォーム応募</strong><br>
+              <span>活動内容、SNS、得意ジャンル、今後の活動方針などを確認します。</span>
             </div>
-          </article>
+          </div>
 
-          <article class="flow-item">
-            <div class="flow-num">03</div>
+          <div class="flow-row">
+            <b>02</b>
             <div>
-              <h3>準備期間</h3>
-              <p>必要に応じて、配信環境や活動設計を一緒に整えます。</p>
+              <strong>オンライン面談</strong><br>
+              <span>活動方針やサポート内容の相性をすり合わせます。</span>
             </div>
-          </article>
+          </div>
 
-          <article class="flow-item">
-            <div class="flow-num">04</div>
+          <div class="flow-row">
+            <b>03</b>
             <div>
-              <h3>所属・活動開始</h3>
-              <p>活動状況に合わせて、継続的にサポートします。</p>
+              <strong>準備期間</strong><br>
+              <span>必要に応じて活動設計、素材、配信環境を整えます。</span>
             </div>
-          </article>
+          </div>
+
+          <div class="flow-row">
+            <b>04</b>
+            <div>
+              <strong>所属・活動開始</strong><br>
+              <span>初動設計から継続運用まで、活動状況に合わせて伴走します。</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ========================================
       FAQ
-      質問を増やす場合は .faq-card を追加
     ========================================= -->
-    <section class="section">
+    <section>
       <div class="container">
-        <div class="eyebrow">Question</div>
-        <h2 style="margin: 14px 0 32px; font-size: clamp(2.8rem, 6vw, 5rem); line-height: 0.95; font-weight: 950; font-style: italic; text-transform: uppercase;">FAQ</h2>
+        <div class="eyebrow">FAQ</div>
+        <h2 class="section-title">FAQ</h2>
 
-        <div class="faq-grid">
-          <article class="faq-card">
+        <div class="grid">
+          <article class="card">
             <h3>未経験でも応募できますか？</h3>
-            <p>応募可能です。経験よりも、継続して活動する意思や表現したい方向性を重視します。</p>
+            <p>
+              応募可能です。経験よりも、継続して活動する意思や表現したい方向性を重視します。
+            </p>
           </article>
 
-          <article class="faq-card">
+          <article class="card">
             <h3>配信環境が整っていなくても大丈夫ですか？</h3>
-            <p>現状を確認したうえで、必要な機材や環境づくりを一緒に整理します。</p>
+            <p>
+              現状を確認したうえで、必要な機材や環境づくりを一緒に整理します。
+            </p>
           </article>
 
-          <article class="faq-card">
+          <article class="card">
             <h3>今使っているアカウントを変えたくないのですが大丈夫ですか？</h3>
-            <p>問題ありません。現在の活動状況やアカウント運用を確認したうえで、一度ご相談ください。</p>
+            <p>
+              問題ありません。現在の活動状況やアカウント運用を確認したうえで、一度ご相談ください。
+            </p>
           </article>
 
-          <article class="faq-card">
+          <article class="card">
             <h3>再応募はできますか？</h3>
-            <p>可能です。ただし、前回の応募から1か月以上期間を空けてから再度ご応募ください。活動状況の変化も含めて確認します。</p>
+            <p>
+              可能です。ただし、前回の応募から1か月以上期間を空けてから再度ご応募ください。活動状況の変化も含めて確認します。
+            </p>
           </article>
         </div>
       </div>
@@ -559,7 +517,7 @@
   ========================================= -->
   <footer>
     <div class="container">
-      &copy; 2026 Nocta Studio / GlowEngine LLC. All Rights Reserved.
+      Operated by GlowEngine LLC. © 2026 All Rights Reserved.
     </div>
   </footer>
 </body>
