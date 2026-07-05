@@ -202,6 +202,7 @@
 
     /* ========================================
       HERO
+      トップの大きい文字バランスはここ
     ========================================= */
     .hero {
       min-height: 82vh;
@@ -213,14 +214,19 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 980px);
+      grid-template-columns: minmax(0, 1080px);
       align-items: center;
       justify-content: center;
+      text-align: center;
       transform: translateY(-12px);
     }
 
+    .hero .eyebrow {
+      justify-content: center;
+    }
+
     .hero-title {
-      margin: 16px 0 28px;
+      margin: 16px auto 28px;
       font-size: clamp(5rem, 10.2vw, 10rem);
       line-height: 0.86;
       letter-spacing: 0;
@@ -238,7 +244,7 @@
 
     .hero-copy {
       max-width: 900px;
-      margin: 0;
+      margin: 0 auto;
       color: #445266;
       font-size: clamp(1.05rem, 1.65vw, 1.24rem);
       font-weight: 700;
