@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Nocta Studio所属・提携タレントへの法人お問い合わせ。">
   <title>Business Inquiry | Nocta Studio</title>
-  <link rel="stylesheet" href="styles.css?v=20260720-2">
-  <script src="site.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260721-1">
+  <script src="site.js?v=20260721-1" defer></script>
 </head>
 <body class="business-page">
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -47,7 +47,12 @@
           <h2 id="inquiry-title">企業・法人のご相談はこちら。</h2>
         </div>
 
-        <form class="inquiry-form reveal" action="mailto:info@glowengine-llc.com" method="post" enctype="text/plain">
+        <form class="inquiry-form reveal" action="https://formspree.io/f/mvzeryow" method="post" data-formspree>
+          <input type="hidden" name="_subject" value="Nocta Studio 法人お問い合わせ">
+          <label class="visually-hidden" aria-hidden="true">
+            この項目は空のままにしてください
+            <input name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </label>
           <div class="form-row">
             <label class="field">
               <span class="field-label">会社名 <span class="required">必須</span></span>
@@ -76,8 +81,8 @@
               <textarea name="ご相談内容" placeholder="案件概要、希望時期、予算感、起用イメージなどをご記入ください。" required></textarea>
             </label>
           </div>
-          <button class="button" type="submit">入力内容をメールで送る <span class="button-arrow" aria-hidden="true">›</span></button>
-          <p class="form-note">現在はメールアプリを開く仮フォームです。本番公開時はフォーム送信サービスへの接続をおすすめします。</p>
+          <button class="button" type="submit">送信する <span class="button-arrow" aria-hidden="true">›</span></button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -91,3 +96,4 @@
   </footer>
 </body>
 </html>
+
