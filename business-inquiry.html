@@ -1,79 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nocta Studio所属・提携タレントへの法人お問い合わせ。">
   <title>Business Inquiry | Nocta Studio</title>
-  <style>
-    :root { --bg:#f6f8fb; --text:#111827; --muted:#617083; --line:rgba(10,24,38,.12); --cyan:#20d7f5; --green:#24e2ae; --pink:#ff4fd8; --max:1040px; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:"Helvetica Neue",Arial,"Hiragino Sans","Yu Gothic",sans-serif; color:var(--text); background:linear-gradient(rgba(8,24,38,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(8,24,38,.035) 1px,transparent 1px),radial-gradient(circle at 12% 8%,rgba(32,215,245,.2),transparent 28%),radial-gradient(circle at 88% 12%,rgba(255,79,216,.14),transparent 26%),#f6f8fb; background-size:48px 48px,48px 48px,auto,auto,auto; line-height:1.8; }
-    a { color:inherit; text-decoration:none; }
-    .container { width:min(var(--max),calc(100% - 40px)); margin:0 auto; }
-    header { padding:18px 0; position:sticky; top:0; z-index:10; backdrop-filter:blur(16px); }
-    .header-inner { display:flex; justify-content:space-between; align-items:center; min-height:64px; padding:0 22px; background:rgba(255,255,255,.86); border:1px solid var(--line); box-shadow:0 18px 60px rgba(18,32,48,.12); }
-    .brand { display:flex; gap:12px; align-items:center; font-weight:950; letter-spacing:.05em; text-transform:uppercase; }
-    .brand-mark { display:block; width:36px; height:36px; object-fit:contain; flex:0 0 auto; }
-    .brand-logo-img { display:block; width:clamp(150px,15vw,230px); height:auto; }
-    .nav { display:flex; gap:24px; align-items:center; color:#667386; font-size:.72rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
-    .hero { padding:96px 0 56px; }
-    .eyebrow { display:inline-flex; gap:10px; align-items:center; color:var(--cyan); font-size:.72rem; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
-    .eyebrow::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--green); }
-    h1 { margin:18px 0 22px; font-size:clamp(3.2rem,8vw,7rem); line-height:.9; font-weight:950; font-style:italic; text-transform:uppercase; }
-    .lead { max-width:760px; color:#445266; font-size:1.08rem; font-weight:700; letter-spacing:.04em; }
-    .panel { margin:0 auto 84px; padding:clamp(28px,5vw,56px); border:1px solid rgba(32,215,245,.35); background:linear-gradient(135deg,rgba(32,215,245,.18),transparent 38%),linear-gradient(315deg,rgba(255,79,216,.14),transparent 44%),rgba(255,255,255,.9); box-shadow:0 28px 90px rgba(18,32,48,.14); }
-    form { display:grid; gap:18px; }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
-    label { display:grid; gap:8px; font-size:.82rem; font-weight:950; letter-spacing:.08em; }
-    input, select, textarea { width:100%; border:1px solid var(--line); background:#fff; color:var(--text); padding:14px 16px; font:inherit; border-radius:0; }
-    textarea { min-height:180px; resize:vertical; }
-    .full { grid-column:1 / -1; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 26px; border:0; color:#031014; background:linear-gradient(135deg,var(--green),var(--cyan) 55%,var(--pink)); font-size:.78rem; font-weight:950; letter-spacing:.16em; text-transform:uppercase; cursor:pointer; box-shadow:0 18px 44px rgba(32,215,245,.22); }
-    .note { color:var(--muted); font-size:.88rem; font-weight:650; }
-    footer { padding:48px 0; border-top:1px solid var(--line); color:var(--muted); font-size:.78rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
-    @media (max-width:760px){ .nav a:not(:first-child){display:none;} .grid{grid-template-columns:1fr;} h1{font-size:clamp(3rem,16vw,5rem);} }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
 </head>
-<body>
-  <header>
-    <div class="container header-inner">
-      <a class="brand" href="nocta-studio-redesign.html"><img src="./icon_nocta_cropped.png" alt="" class="brand-mark"><img src="./nocta-studio-logo-transparent.png" alt="Nocta Studio" class="brand-logo-img"></a>
-      <nav class="nav"><a href="nocta-studio-redesign.html">Home</a><a href="audition.html">Audition</a></nav>
+<body class="business-page">
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header" data-header>
+    <div class="container header-shell">
+      <a class="brand" href="index.html" aria-label="Nocta Studio ホーム">
+        <span class="brand-mark" aria-hidden="true"><img src="nocta-mark.png" alt=""></span>
+        <span class="brand-name">Nocta Studio</span>
+      </a>
+      <button class="icon-button" type="button" aria-label="メニューを開く" aria-expanded="false" data-menu-button>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" aria-label="メインナビゲーション" data-menu>
+        <a href="index.html">Home</a>
+        <a href="index.html#business">Business</a>
+        <a href="audition.html">Audition</a>
+        <a href="business-inquiry.html" aria-current="page">Contact</a>
+        <a class="nav-entry" href="audition.html">Entry</a>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="main">
+    <section class="page-hero business-hero" aria-labelledby="business-title">
       <div class="container">
-        <div class="eyebrow">For Companies</div>
-        <h1>Business<br>Inquiry</h1>
-        <p class="lead">タイアップ、配信者起用、イベント出演、プロモーションなど、Nocta Studio所属・提携タレントへのご相談はこちらからお問い合わせください。</p>
+        <div class="page-hero-inner">
+          <p class="eyebrow">For Companies</p>
+          <h1 class="page-title" id="business-title">Business Inquiry</h1>
+          <p class="page-lead">タイアップ、配信者起用、イベント出演、プロモーションなど、<br>Nocta Studio所属・提携タレントへのご相談を承ります。</p>
+        </div>
       </div>
     </section>
 
-    <section class="container panel">
-      <form action="mailto:info@glowengine-llc.com" method="post" enctype="text/plain">
-        <div class="grid">
-          <label>会社名<input name="会社名" type="text" autocomplete="organization" required></label>
-          <label>ご担当者名<input name="ご担当者名" type="text" autocomplete="name" required></label>
-          <label>メールアドレス<input name="メールアドレス" type="email" autocomplete="email" required></label>
-          <label>相談種別
-            <select name="相談種別" required>
-              <option value="">選択してください</option>
-              <option>タイアップ・PR案件</option>
-              <option>イベント出演</option>
-              <option>配信企画への出演</option>
-              <option>その他のご相談</option>
-            </select>
-          </label>
-          <label class="full">ご相談内容<textarea name="ご相談内容" placeholder="案件概要、希望時期、予算感、起用イメージなどをご記入ください。" required></textarea></label>
+    <section class="band band-soft" aria-labelledby="inquiry-title">
+      <div class="container form-layout">
+        <div class="form-intro reveal">
+          <p class="eyebrow">Contact Form</p>
+          <h2 id="inquiry-title">企業・法人のご相談はこちら。</h2>
         </div>
-        <button class="btn" type="submit">送信する</button>
-        <p class="note">現在はメール送信用の仮フォームです。本番公開時はGoogleフォームやフォーム送信サービスに差し替えると安定します。</p>
-      </form>
+
+        <form class="inquiry-form reveal" action="mailto:info@glowengine-llc.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <label class="field">
+              <span class="field-label">会社名 <span class="required">必須</span></span>
+              <input name="会社名" type="text" autocomplete="organization" required>
+            </label>
+            <label class="field">
+              <span class="field-label">ご担当者名 <span class="required">必須</span></span>
+              <input name="ご担当者名" type="text" autocomplete="name" required>
+            </label>
+            <label class="field">
+              <span class="field-label">メールアドレス <span class="required">必須</span></span>
+              <input name="メールアドレス" type="email" autocomplete="email" inputmode="email" required>
+            </label>
+            <label class="field">
+              <span class="field-label">相談種別 <span class="required">必須</span></span>
+              <select name="相談種別" required>
+                <option value="">選択してください</option>
+                <option>タイアップ・PR案件</option>
+                <option>イベント出演</option>
+                <option>配信企画への出演</option>
+                <option>その他のご相談</option>
+              </select>
+            </label>
+            <label class="field field-full">
+              <span class="field-label">ご相談内容 <span class="required">必須</span></span>
+              <textarea name="ご相談内容" placeholder="案件概要、希望時期、予算感、起用イメージなどをご記入ください。" required></textarea>
+            </label>
+          </div>
+          <button class="button" type="submit">入力内容をメールで送る <span class="button-arrow" aria-hidden="true">›</span></button>
+          <p class="form-note">現在はメールアプリを開く仮フォームです。本番公開時はフォーム送信サービスへの接続をおすすめします。</p>
+        </form>
+      </div>
     </section>
   </main>
 
-  <footer><div class="container">Operated by GlowEngine LLC. © 2026 All Rights Reserved.</div></footer>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">Nocta Studio</div>
+      <p class="footer-meta">Operated by <a href="https://glowengine-llc.com/" target="_blank" rel="noopener">GlowEngine LLC.</a> © 2026</p>
+    </div>
+  </footer>
 </body>
 </html>
