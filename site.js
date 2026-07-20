@@ -1,4 +1,3 @@
-
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('[data-menu-button]');
 const menu = document.querySelector('[data-menu]');
@@ -95,4 +94,3 @@ inquiryForm?.addEventListener('submit', async (event) => {
     }
   }
 });
-
