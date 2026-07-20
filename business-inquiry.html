@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nocta Studio所属・提携タレントへの法人お問い合わせ。">
+  <title>Business Inquiry | Nocta Studio</title>
+  <link rel="stylesheet" href="styles.css?v=20260721-2">
+  <script src="site.js?v=20260721-2" defer></script>
+</head>
+<body class="business-page">
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header" data-header>
+    <div class="container header-shell">
+      <a class="brand" href="index.html" aria-label="Nocta Studio ホーム">
+        <span class="brand-mark" aria-hidden="true"><img src="nocta-mark.png" alt=""></span>
+        <span class="brand-name">Nocta Studio</span>
+      </a>
+      <button class="icon-button" type="button" aria-label="メニューを開く" aria-expanded="false" data-menu-button>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" aria-label="メインナビゲーション" data-menu>
+        <a href="index.html">Home</a>
+        <a href="index.html#business">Business</a>
+        <a href="audition.html">Audition</a>
+        <a href="business-inquiry.html" aria-current="page">Contact</a>
+        <a class="nav-entry" href="audition.html">Entry</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero business-hero" aria-labelledby="business-title">
+      <div class="container">
+        <div class="page-hero-inner">
+          <p class="eyebrow">For Companies</p>
+          <h1 class="page-title" id="business-title">Business Inquiry</h1>
+          <p class="page-lead">タイアップ、配信者起用、イベント出演、プロモーションなど、<br>Nocta Studio所属・提携タレントへのご相談を承ります。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-soft" aria-labelledby="inquiry-title">
+      <div class="container form-layout">
+        <div class="form-intro reveal">
+          <p class="eyebrow">Contact Form</p>
+          <h2 id="inquiry-title">企業・法人のご相談はこちら。</h2>
+        </div>
+
+        <form class="inquiry-form reveal" action="https://formspree.io/f/mvzeryow" method="post" data-formspree>
+          <input type="hidden" name="_subject" value="Nocta Studio 法人お問い合わせ">
+          <label class="visually-hidden" aria-hidden="true">
+            この項目は空のままにしてください
+            <input name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </label>
+          <div class="form-row">
+            <label class="field">
+              <span class="field-label">会社名 <span class="required">必須</span></span>
+              <input name="会社名" type="text" autocomplete="organization" required>
+            </label>
+            <label class="field">
+              <span class="field-label">ご担当者名 <span class="required">必須</span></span>
+              <input name="ご担当者名" type="text" autocomplete="name" required>
+            </label>
+            <label class="field">
+              <span class="field-label">メールアドレス <span class="required">必須</span></span>
+              <input name="email" type="email" autocomplete="email" inputmode="email" required>
+            </label>
+            <label class="field">
+              <span class="field-label">相談種別 <span class="required">必須</span></span>
+              <select name="相談種別" required>
+                <option value="">選択してください</option>
+                <option>タイアップ・PR案件</option>
+                <option>イベント出演</option>
+                <option>配信企画への出演</option>
+                <option>その他のご相談</option>
+              </select>
+            </label>
+            <label class="field field-full">
+              <span class="field-label">ご相談内容 <span class="required">必須</span></span>
+              <textarea name="ご相談内容" placeholder="案件概要、希望時期、予算感、起用イメージなどをご記入ください。" required></textarea>
+            </label>
+          </div>
+          <button class="button" type="submit">送信する <span class="button-arrow" aria-hidden="true">›</span></button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">Nocta Studio</div>
+      <p class="footer-meta">Operated by <a href="https://glowengine-llc.com/" target="_blank" rel="noopener">GlowEngine LLC.</a> © 2026</p>
+    </div>
+  </footer>
+</body>
+</html>
